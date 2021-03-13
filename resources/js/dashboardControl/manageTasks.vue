@@ -121,7 +121,7 @@
 
         <!--        Completed modal-->
         <div
-            class="hidden bg-blue-hrBg bg-opacity-60 overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center flex">
+            class=" bg-blue-hrBg bg-opacity-60 overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center flex">
             <div class="bg-white  p-4 rounded-2xl">
                 <div class="text-blue-darkGray text-opacity-70 border-b border-gray-300 mb-5">
                     Confirmation
