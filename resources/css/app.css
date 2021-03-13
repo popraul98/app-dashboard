@@ -1,0 +1,36 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+
+/*Grid & Boxes*/
+.grid-box {
+    @apply overflow-hidden bg-blue-50 text-gray-900  text-center border border-gray-100 px-4 py-2 shadow-2xl rounded;
+}
+
+.grid-box-overflow-visible {
+    @apply bg-blue-50 text-gray-900  shadow-2xl rounded text-center border border-gray-100 px-4 pb-2;
+
+}
+
+
+/*Inside Box*/
+.title-box {
+    @apply tracking-tighter font-medium text-lg text-blue-dark text-opacity-90
+}
+
+.text-main {
+    @apply pt-1 font-semibold text-blue-dark
+}
+
+.text-second {
+    @apply font-normal text-blue-gray text-opacity-60
+}
+
+.arrow-color {
+    @apply text-blue-darkGray text-opacity-80
+}
+
+.divide {
+    @apply divide-y divide-gray-300 divide-opacity-70
+}
