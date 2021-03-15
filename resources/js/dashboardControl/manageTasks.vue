@@ -37,7 +37,7 @@
                                     edit
                                 </button>
                                 <button
-                                    @click="setAsCompleted(task.id)"
+                                    @click="toggleConfirmWindow(task.id,task.name)"
                                     class=" text-blue-dark text-xs mr-2 flex-shrink-0 px-0.5 border border-gray-300 rounded hover:bg-blue-dark hover:text-white">
                                     completed
                                 </button>
@@ -83,7 +83,7 @@
                                     edit
                                 </button>
                                 <button
-                                    @click="setAsCompleted(task.id)"
+                                    @click="toggleConfirmWindow(task.id,task.name)"
                                     class=" text-blue-dark text-xs mr-2 flex-shrink-0 px-0.5 border border-gray-300 rounded hover:bg-blue-dark hover:text-white">
                                     completed
                                 </button>
@@ -120,23 +120,25 @@
         </div>
 
         <!--        Completed modal-->
-        <div
-            class=" bg-blue-hrBg bg-opacity-60 overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center flex">
-            <div class="bg-white  p-4 rounded-2xl">
-                <div class="text-blue-darkGray text-opacity-70 border-b border-gray-300 mb-5">
-                    Confirmation
+        <div v-if="showConfirmModal"
+             class="bg-gray-400 bg-opacity-70 overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center flex">
+            <div class=" bg-white rounded-2xl">
+                <div class="border-b border-gray-200 px-5 pt-5 text-opacity-80 font-semibold text-4xl text-blue-dark">
+                    Confirm
                 </div>
-                <div class="text-lg mb-7">
-                    You mark <span class="font-semibold">TASKsdfghsfasfjbhghg NAME</span> as completed?
+                <div class="text-lg px-5 py-5 text-left text-blue-dark">
+                    Do you mark <span class="font-semibold">{{ name_individual_task }}</span> as completed?
                 </div>
-                <div class="flex items-center justify-between">
+                <div class="flex items-center justify-between px-5 pb-5 mt-5">
                     <button
-                        class="underline font-semibold uppercase px-1 py-1.5 text-sm outline-none focus:outline-none mr-1"
+                        @click="toggleConfirmWindow()"
+                        class="text-blue-dark text-opacity-80 underline font-semibold uppercase px-1 py-1.5 text-sm outline-none focus:outline-none mr-1"
                         type="button" style="transition: all .15s ease">
                         Cancel
                     </button>
                     <button
-                        class=" border border-blue-hrBg rounded-xl hover:bg-blue-hrBg hover:text-white font-bold uppercase px-4 py-1.5 text-sm outline-none focus:outline-none mr-1"
+                        @click="setAsCompleted"
+                        class=" border border-gray-200 text-blue-dark text-opacity-80 rounded-xl hover:bg-blue-hrBg hover:text-white font-bold uppercase px-4 py-1.5 text-sm outline-none focus:outline-none mr-1"
                         type="button" style="transition: all .15s ease">
                         Mark as completed
                     </button>
@@ -149,7 +151,7 @@
 
 <script>
 import ModalEditTask from "./componentsDashboardControl/modalEditTask";
-import ShowTask from "./componentsDashboardControl/modalShowTask";
+import ShowTask from "./componentsDashboardControl/modalDetailsTask";
 
 export default {
     name: "editTasks",
@@ -159,8 +161,13 @@ export default {
             tasks_for_today: [],
             update_tasks_in10_days: [],
             individual_task: [],
+
             showDetailsModal: false,
             showEditModal: false,
+            showConfirmModal: false,
+            id_individual_task: null,
+            name_individual_task: null,
+
         }
     },
     mounted() {
@@ -202,17 +209,34 @@ export default {
             }
             this.showEditModal = true;
         },
-        setAsCompleted(id) {
 
-            axios.post('/set-completed/', {
-                id: id,
-            })
-                .then(response => {
-                    this.getTasks();
+        toggleConfirmWindow(id, task_name) {
+            if (this.showConfirmModal === false) {
+                this.showConfirmModal = true;
+                this.id_individual_task = id;
+                this.name_individual_task = task_name;
+            } else {
+                this.showConfirmModal = false;
+                this.id_individual_task = null;
+                this.name_individual_task = null;
+            }
+        },
+
+        setAsCompleted() {
+            if (this.id_individual_task !== null) {
+
+                axios.post('/set-completed/', {
+                    id: this.id_individual_task,
                 })
-                .catch(function (error) {
-                    console.log(error)
-                });
+                    .then(response => {
+                        this.getTasks();
+                    })
+                    .catch(function (error) {
+                        console.log(error)
+                    });
+
+                this.toggleConfirmWindow();
+            }
         }
     },
 }

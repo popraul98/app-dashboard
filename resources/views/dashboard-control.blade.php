@@ -102,7 +102,7 @@
         {{--Button LogOut--}}
         <li class="absolute bottom-0 left-0 p-5  ">
             <a href="/logout"
-               class="border text-sm rounded-lg hover:bg-white hover:text-black px-2 py-1 ">
+               class="border border-gray-400 text-gray-300 text-sm rounded-lg hover:bg-blue-hrBg hover:text-black px-2 py-1 ">
                 Dashboard / Logout
             </a>
         </li>

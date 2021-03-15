@@ -5,7 +5,7 @@ import addClient from "../dashboardControl/addClient";
 import addTask from "../dashboardControl/addTask";
 import completedTasks from "../dashboardControl/completedTasks";
 import manageClients from "../dashboardControl/manageClients";
-import outOfDateTasks from "../dashboardControl/componentsDashboardControl/outOfDateTasks";
+import outOfDateTasks from "../dashboardControl/outOfDateTasks";
 
 const routes = [
     {

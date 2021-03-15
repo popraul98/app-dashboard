@@ -3,7 +3,7 @@
         class=" break-words text-left m-7 border border-gray-300 shadow rounded-lg bg-gray-100 w-1/2 text-blue-dark text-opacity-80">
 
         <div class="sticky top-0 font-semibold text-white bg-blue-hrBg p-3 rounded-t-lg">
-            Add New Client
+            <i class='fas fa-user-plus'></i> Add New Client
         </div>
         <div class="text-right mr-6 mt-3 text-xs text-opacity-10 ">
             * - field required

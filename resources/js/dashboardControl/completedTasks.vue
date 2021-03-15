@@ -62,8 +62,8 @@
 </template>
 
 <script>
-import modalShowTask from "./componentsDashboardControl/modalShowTask";
-import ShowTask from "./componentsDashboardControl/modalShowTask";
+import modalShowTask from "./componentsDashboardControl/modalDetailsTask";
+import ShowTask from "./componentsDashboardControl/modalDetailsTask";
 
 export default {
     name: "tasksCompleted",
