@@ -53,17 +53,15 @@
                 v-if="showDetailsModal"
                 @close="showDetailsModal = false"
             >
-
             </modal-details-client>
 
-            <!--            <modal-edit-task-->
-            <!--                @if_updated_successfully="getTasks"-->
-            <!--                v-if="showEditModal"-->
-            <!--                @close="showEditModal = false"-->
-            <!--                v-bind:task="individual_task"-->
-
-            <!--            >-->
-            <!--            </modal-edit-task>-->
+            <modal-edit-client
+                @if_updated_successfully="getClients"
+                v-if="showEditModal"
+                @close="showEditModal = false"
+                v-bind:client="individual_client"
+            >
+            </modal-edit-client>
 
         </div>
     </div>
@@ -72,16 +70,16 @@
 
 <script>
 import modalDetailsClient from "./componentsDashboardControl/modalDetailsClient";
+import modalEditClient from "./componentsDashboardControl/modalEditClient";
 
 export default {
     name: "manageClients",
     components: {
-        modalDetailsClient,
+        modalDetailsClient, modalEditClient
     },
     data() {
         return {
             all_clients: [],
-
             individual_client: [],
 
             showDetailsModal: false,
@@ -97,6 +95,7 @@ export default {
                 .then((response) => {
                     this.all_clients = response.data.all_clients;
                 });
+            console.log('take clients')
         },
         clientsNotFound(obj) {
             if (obj === undefined || obj.length == 0) {

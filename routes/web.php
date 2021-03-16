@@ -41,12 +41,15 @@ Route::middleware('auth')->group(function () {
     Route::get('/dashboard-control', function () {
         return view('dashboard-control');
     });
+
     Route::get('/dashboard-control-data', [DashboardControl::class, 'index']);
+
     Route::post('/create-task', [TaskController::class, 'store']);
     Route::post('/update-task', [TaskController::class, 'update']);
     Route::post('/set-completed', [TaskController::class, 'setAsCompleted']);
 
     Route::post('/create-client', [ClientController::class, 'store']);
+    Route::post('/update-client', [ClientController::class, 'update']);
 
 
 });

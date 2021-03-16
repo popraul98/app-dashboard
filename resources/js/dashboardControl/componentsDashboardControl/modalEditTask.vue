@@ -14,19 +14,24 @@
         </div>
         <div v-else>
             <form @submit.prevent="updateTasks">
+                <div class="text-right text-blue-dark mr-6 mt-3 text-xs text-opacity-70 ">
+                    * - field required
+                </div>
                 <ul class="mt-3">
 
                     <li class="mt-2">
                         <label class="text-blue-dark text-sm">Name:</label>
                         <input class="pl-2 text-blue-dark  bg-white border rounded w-full border-gray-300"
-                               v-model="task_to_edit.name">
+                               v-model="task_to_edit.name"
+                               required>
 
                     </li>
 
                     <li class="mt-2">
                         <label class="text-blue-dark text-sm">Client id:</label>
                         <input class="pl-2 text-blue-dark bg-white border rounded w-full border-gray-300"
-                               v-model="task_to_edit.client_id">
+                               v-model="task_to_edit.client_id"
+                               required>
                     </li>
 
                     <!--                    not editing-->
@@ -66,14 +71,14 @@
 
                     <li>
                         <label
-                            class="font-bold text-sm"
+                            class="text-blue-dark text-sm"
                             for="invoice_date"
                         >
                             Invoice Date:
                         </label>
                         <datepicker
                             placeholder="click here to choose a date"
-                            v-model="task_to_edit.invoice_date"
+                            v-model="task_to_edit.invoiced_date"
                             :lower-limit="new Date()"
                             id="invoice_date"
                             name="task.invoice_date"
@@ -113,7 +118,6 @@
                     </div>
                 </button>
 
-                <div class="text-green-600 opacity-90" v-html="message"></div>
 
             </form>
 
@@ -147,12 +151,11 @@ export default {
                 task_date: this.formatDate(this.task.task_date),
                 type: this.task.type,
                 details: this.task.details,
-                invoiced_date: this.formatDate(this.task.invoiced_date),
+                invoiced_date: new Date(this.task.invoiced_date),
                 programming_worked_minutes: this.task.programming_worked_minutes,
                 support_worked_minutes: this.task.support_worked_minutes,
             },
 
-            message: "",
             visual_spinner: false,
 
         }
@@ -193,7 +196,6 @@ export default {
         },
         onSuccess() {
             this.visual_spinner = false;
-            this.message = '<p>Great! Task added successfully!</p>';
 
             this.resetFields();
             this.$emit('if_updated_successfully');

@@ -104,7 +104,6 @@
             <show-task v-bind:task="individual_task"
                        v-if="showDetailsModal"
                        @close="showDetailsModal = false"
-
             >
             </show-task>
 

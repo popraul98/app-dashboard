@@ -9,10 +9,13 @@
                 Close
             </button>
         </div>
+
         <div v-if="client_to_show == ''" class="text-blue-dark text-sm mt-3">
             click on <span class="italic">details</span> to show description
         </div>
+
         <div v-else>
+
             <ul class="mt-3">
 
                 <li class="mt-3">
@@ -262,6 +265,7 @@
             >
                 <i class='fas fa-angle-double-up'></i>  Go UP
             </button>
+
         </div>
 
     </div>

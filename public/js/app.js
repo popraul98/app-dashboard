@@ -14968,12 +14968,12 @@ __webpack_require__.r(__webpack_exports__);
         contact_person_1: null,
         email_contact_person_1: null,
         receive_notification_1: null,
-        contact_person_2: "numepers2",
-        email_contact_person_2: "emailpers2",
-        receive_notification_2: "1",
-        contact_person_3: "numerpers3",
-        email_contact_person_3: "emailpers3",
-        receive_notification_3: "0",
+        contact_person_2: null,
+        email_contact_person_2: null,
+        receive_notification_2: null,
+        contact_person_3: null,
+        email_contact_person_3: null,
+        receive_notification_3: null,
         programming_hours: null,
         support_hours: null,
         subscription_id: null,
@@ -15306,6 +15306,144 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/dashboardControl/componentsDashboardControl/modalEditClient.vue?vue&type=script&lang=js":
+/*!******************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/dashboardControl/componentsDashboardControl/modalEditClient.vue?vue&type=script&lang=js ***!
+  \******************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ });
+/* harmony import */ var vue3_datepicker__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue3-datepicker */ "./node_modules/vue3-datepicker/dist/vue3-datepicker.esm.js");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  name: "modalEditClient",
+  props: ['client'],
+  components: {
+    Datepicker: vue3_datepicker__WEBPACK_IMPORTED_MODULE_0__.default
+  },
+  data: function data() {
+    return {
+      client_to_edit: {
+        name: this.client.name,
+        email: this.client.email,
+        website: this.client.website,
+        company: this.client.company,
+        matriculation_number: this.client.matriculation_number,
+        cui: this.client.cui,
+        bank_name: this.client.bank_name,
+        bank_account: this.client.bank_account,
+        address: this.client.address,
+        contract_start_date: new Date(this.client.contract_start_date),
+        contact_person_1: this.client.contact_person_1,
+        email_contact_person_1: this.client.email_contact_person_1,
+        receive_notification_1: this.client.receive_notification_1,
+        contact_person_2: this.client.contact_person_2,
+        email_contact_person_2: this.client.email_contact_person_2,
+        receive_notification_2: this.client.receive_notification_2,
+        contact_person_3: this.client.contact_person_3,
+        email_contact_person_3: this.client.email_contact_person_3,
+        receive_notification_3: this.client.receive_notification_3,
+        programming_hours: this.client.programming_hours,
+        support_hours: this.client.support_hours,
+        subscription_id: this.client.subscription_id,
+        new_website: this.client.new_website,
+        anniversary_date: new Date(this.client.anniversary_date),
+        website_link: this.client.website_link,
+        website_backend_link: this.client.website_backend_link,
+        jira_link: this.client.jira_link,
+        google_drive_link: this.client.google_drive_link,
+        hosting_link: this.client.hosting_link,
+        contract_sent_date: new Date(this.client.contract_sent_date),
+        contract_end_date: new Date(this.client.contract_end_date),
+        language: this.client.language
+      },
+      visual_spinner: false
+    };
+  },
+  mounted: function mounted() {},
+  watch: {
+    client: function client(newClient) {
+      this.client_to_edit = this.client;
+    }
+  },
+  methods: {
+    isFieldEmpty: function isFieldEmpty(field) {
+      if (field == null) {
+        return 1;
+      }
+    },
+    updateClient: function updateClient(id) {
+      var _this = this;
+
+      axios.post('/update-client', {
+        id: id,
+        name: this.client_to_edit.name,
+        email: this.client_to_edit.email,
+        website: this.client_to_edit.website,
+        company: this.client_to_edit.company,
+        matriculation_number: this.client_to_edit.matriculation_number,
+        cui: this.client_to_edit.cui,
+        bank_name: this.client_to_edit.bank_name,
+        bank_account: this.client_to_edit.bank_account,
+        address: this.client_to_edit.address,
+        contract_start_date: this.formatDate(this.client_to_edit.contract_start_date),
+        contact_person_1: this.client_to_edit.contact_person_1,
+        email_contact_person_1: this.client_to_edit.email_contact_person_1,
+        receive_notification_1: this.client_to_edit.receive_notification_1,
+        contact_person_2: this.client_to_edit.contact_person_2,
+        email_contact_person_2: this.client_to_edit.email_contact_person_2,
+        receive_notification_2: this.client_to_edit.receive_notification_2,
+        contact_person_3: this.client_to_edit.contact_person_3,
+        email_contact_person_3: this.client_to_edit.email_contact_person_3,
+        receive_notification_3: this.client_to_edit.receive_notification_3,
+        programming_hours: this.client_to_edit.programming_hours,
+        support_hours: this.client_to_edit.support_hours,
+        subscription_id: this.client_to_edit.subscription_id,
+        new_website: this.client_to_edit.new_website,
+        anniversary_date: this.formatDate(this.client_to_edit.anniversary_date),
+        website_link: this.client_to_edit.website_link,
+        website_backend_link: this.client_to_edit.website_backend_link,
+        jira_link: this.client_to_edit.jira_link,
+        google_drive_link: this.client_to_edit.google_drive_link,
+        hosting_link: this.client_to_edit.hosting_link,
+        contract_sent_date: this.formatDate(this.client_to_edit.contract_sent_date),
+        contract_end_date: this.formatDate(this.client_to_edit.contract_end_date),
+        language: this.client_to_edit.language
+      }).then(function (response) {
+        _this.onSuccess();
+
+        console.log('succes');
+      })["catch"](function (error) {
+        console.log(error);
+      });
+    },
+    onSuccess: function onSuccess() {
+      this.visual_spinner = false;
+      this.resetFields();
+      this.$emit('if_updated_successfully');
+      this.client_to_edit = '';
+    },
+    resetFields: function resetFields() {},
+    formatDate: function formatDate(date) {
+      var d = new Date(date),
+          month = '' + (d.getMonth() + 1),
+          day = '' + d.getDate(),
+          year = d.getFullYear();
+      if (month.length < 2) month = '0' + month;
+      if (day.length < 2) day = '0' + day;
+      return [year, month, day].join('-');
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/dashboardControl/componentsDashboardControl/modalEditTask.vue?vue&type=script&lang=js":
 /*!****************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/dashboardControl/componentsDashboardControl/modalEditTask.vue?vue&type=script&lang=js ***!
@@ -15335,11 +15473,10 @@ __webpack_require__.r(__webpack_exports__);
         task_date: this.formatDate(this.task.task_date),
         type: this.task.type,
         details: this.task.details,
-        invoiced_date: this.formatDate(this.task.invoiced_date),
+        invoiced_date: new Date(this.task.invoiced_date),
         programming_worked_minutes: this.task.programming_worked_minutes,
         support_worked_minutes: this.task.support_worked_minutes
       },
-      message: "",
       visual_spinner: false
     };
   },
@@ -15376,7 +15513,6 @@ __webpack_require__.r(__webpack_exports__);
     },
     onSuccess: function onSuccess() {
       this.visual_spinner = false;
-      this.message = '<p>Great! Task added successfully!</p>';
       this.resetFields();
       this.$emit('if_updated_successfully');
       this.task_to_edit = '';
@@ -15439,11 +15575,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
 /* harmony export */ });
 /* harmony import */ var _componentsDashboardControl_modalDetailsClient__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./componentsDashboardControl/modalDetailsClient */ "./resources/js/dashboardControl/componentsDashboardControl/modalDetailsClient.vue");
+/* harmony import */ var _componentsDashboardControl_modalEditClient__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./componentsDashboardControl/modalEditClient */ "./resources/js/dashboardControl/componentsDashboardControl/modalEditClient.vue");
+
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "manageClients",
   components: {
-    modalDetailsClient: _componentsDashboardControl_modalDetailsClient__WEBPACK_IMPORTED_MODULE_0__.default
+    modalDetailsClient: _componentsDashboardControl_modalDetailsClient__WEBPACK_IMPORTED_MODULE_0__.default,
+    modalEditClient: _componentsDashboardControl_modalEditClient__WEBPACK_IMPORTED_MODULE_1__.default
   },
   data: function data() {
     return {
@@ -15463,6 +15602,7 @@ __webpack_require__.r(__webpack_exports__);
       axios.get('/dashboard-control-data').then(function (response) {
         _this.all_clients = response.data.all_clients;
       });
+      console.log('take clients');
     },
     clientsNotFound: function clientsNotFound(obj) {
       if (obj === undefined || obj.length == 0) {
@@ -69593,6 +69733,32 @@ _modalDetailsTask_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__.defau
 
 /***/ }),
 
+/***/ "./resources/js/dashboardControl/componentsDashboardControl/modalEditClient.vue":
+/*!**************************************************************************************!*\
+  !*** ./resources/js/dashboardControl/componentsDashboardControl/modalEditClient.vue ***!
+  \**************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ });
+/* harmony import */ var _modalEditClient_vue_vue_type_template_id_414a30ea_bindings_client_props_client_to_edit_data_visual_spinner_data_isFieldEmpty_options_updateClient_options_onSuccess_options_resetFields_options_formatDate_options___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modalEditClient.vue?vue&type=template&id=414a30ea&bindings={"client":"props","client_to_edit":"data","visual_spinner":"data","isFieldEmpty":"options","updateClient":"options","onSuccess":"options","resetFields":"options","formatDate":"options"} */ "./resources/js/dashboardControl/componentsDashboardControl/modalEditClient.vue?vue&type=template&id=414a30ea&bindings={\"client\":\"props\",\"client_to_edit\":\"data\",\"visual_spinner\":\"data\",\"isFieldEmpty\":\"options\",\"updateClient\":\"options\",\"onSuccess\":\"options\",\"resetFields\":\"options\",\"formatDate\":\"options\"}");
+/* harmony import */ var _modalEditClient_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modalEditClient.vue?vue&type=script&lang=js */ "./resources/js/dashboardControl/componentsDashboardControl/modalEditClient.vue?vue&type=script&lang=js");
+
+
+
+_modalEditClient_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__.default.render = _modalEditClient_vue_vue_type_template_id_414a30ea_bindings_client_props_client_to_edit_data_visual_spinner_data_isFieldEmpty_options_updateClient_options_onSuccess_options_resetFields_options_formatDate_options___WEBPACK_IMPORTED_MODULE_0__.render
+/* hot reload */
+if (false) {}
+
+_modalEditClient_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__.default.__file = "resources/js/dashboardControl/componentsDashboardControl/modalEditClient.vue"
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_modalEditClient_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__.default);
+
+/***/ }),
+
 /***/ "./resources/js/dashboardControl/componentsDashboardControl/modalEditTask.vue":
 /*!************************************************************************************!*\
   !*** ./resources/js/dashboardControl/componentsDashboardControl/modalEditTask.vue ***!
@@ -69604,12 +69770,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
 /* harmony export */ });
-/* harmony import */ var _modalEditTask_vue_vue_type_template_id_779a5b64_bindings_task_props_task_to_edit_data_message_data_visual_spinner_data_isFieldEmpty_options_updateTask_options_onSuccess_options_resetFields_options_formatDate_options___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modalEditTask.vue?vue&type=template&id=779a5b64&bindings={"task":"props","task_to_edit":"data","message":"data","visual_spinner":"data","isFieldEmpty":"options","updateTask":"options","onSuccess":"options","resetFields":"options","formatDate":"options"} */ "./resources/js/dashboardControl/componentsDashboardControl/modalEditTask.vue?vue&type=template&id=779a5b64&bindings={\"task\":\"props\",\"task_to_edit\":\"data\",\"message\":\"data\",\"visual_spinner\":\"data\",\"isFieldEmpty\":\"options\",\"updateTask\":\"options\",\"onSuccess\":\"options\",\"resetFields\":\"options\",\"formatDate\":\"options\"}");
+/* harmony import */ var _modalEditTask_vue_vue_type_template_id_779a5b64_bindings_task_props_task_to_edit_data_visual_spinner_data_isFieldEmpty_options_updateTask_options_onSuccess_options_resetFields_options_formatDate_options___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modalEditTask.vue?vue&type=template&id=779a5b64&bindings={"task":"props","task_to_edit":"data","visual_spinner":"data","isFieldEmpty":"options","updateTask":"options","onSuccess":"options","resetFields":"options","formatDate":"options"} */ "./resources/js/dashboardControl/componentsDashboardControl/modalEditTask.vue?vue&type=template&id=779a5b64&bindings={\"task\":\"props\",\"task_to_edit\":\"data\",\"visual_spinner\":\"data\",\"isFieldEmpty\":\"options\",\"updateTask\":\"options\",\"onSuccess\":\"options\",\"resetFields\":\"options\",\"formatDate\":\"options\"}");
 /* harmony import */ var _modalEditTask_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modalEditTask.vue?vue&type=script&lang=js */ "./resources/js/dashboardControl/componentsDashboardControl/modalEditTask.vue?vue&type=script&lang=js");
 
 
 
-_modalEditTask_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__.default.render = _modalEditTask_vue_vue_type_template_id_779a5b64_bindings_task_props_task_to_edit_data_message_data_visual_spinner_data_isFieldEmpty_options_updateTask_options_onSuccess_options_resetFields_options_formatDate_options___WEBPACK_IMPORTED_MODULE_0__.render
+_modalEditTask_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__.default.render = _modalEditTask_vue_vue_type_template_id_779a5b64_bindings_task_props_task_to_edit_data_visual_spinner_data_isFieldEmpty_options_updateTask_options_onSuccess_options_resetFields_options_formatDate_options___WEBPACK_IMPORTED_MODULE_0__.render
 /* hot reload */
 if (false) {}
 
@@ -69823,6 +69989,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => /* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_modalDetailsTask_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__.default
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_modalDetailsTask_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./modalDetailsTask.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/dashboardControl/componentsDashboardControl/modalDetailsTask.vue?vue&type=script&lang=js");
+ 
+
+/***/ }),
+
+/***/ "./resources/js/dashboardControl/componentsDashboardControl/modalEditClient.vue?vue&type=script&lang=js":
+/*!**************************************************************************************************************!*\
+  !*** ./resources/js/dashboardControl/componentsDashboardControl/modalEditClient.vue?vue&type=script&lang=js ***!
+  \**************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => /* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_modalEditClient_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__.default
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_modalEditClient_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./modalEditClient.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/dashboardControl/componentsDashboardControl/modalEditClient.vue?vue&type=script&lang=js");
  
 
 /***/ }),
@@ -70081,18 +70263,34 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/dashboardControl/componentsDashboardControl/modalEditTask.vue?vue&type=template&id=779a5b64&bindings={\"task\":\"props\",\"task_to_edit\":\"data\",\"message\":\"data\",\"visual_spinner\":\"data\",\"isFieldEmpty\":\"options\",\"updateTask\":\"options\",\"onSuccess\":\"options\",\"resetFields\":\"options\",\"formatDate\":\"options\"}":
-/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./resources/js/dashboardControl/componentsDashboardControl/modalEditTask.vue?vue&type=template&id=779a5b64&bindings={"task":"props","task_to_edit":"data","message":"data","visual_spinner":"data","isFieldEmpty":"options","updateTask":"options","onSuccess":"options","resetFields":"options","formatDate":"options"} ***!
-  \********************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./resources/js/dashboardControl/componentsDashboardControl/modalEditClient.vue?vue&type=template&id=414a30ea&bindings={\"client\":\"props\",\"client_to_edit\":\"data\",\"visual_spinner\":\"data\",\"isFieldEmpty\":\"options\",\"updateClient\":\"options\",\"onSuccess\":\"options\",\"resetFields\":\"options\",\"formatDate\":\"options\"}":
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./resources/js/dashboardControl/componentsDashboardControl/modalEditClient.vue?vue&type=template&id=414a30ea&bindings={"client":"props","client_to_edit":"data","visual_spinner":"data","isFieldEmpty":"options","updateClient":"options","onSuccess":"options","resetFields":"options","formatDate":"options"} ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => /* reexport safe */ _node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_modalEditTask_vue_vue_type_template_id_779a5b64_bindings_task_props_task_to_edit_data_message_data_visual_spinner_data_isFieldEmpty_options_updateTask_options_onSuccess_options_resetFields_options_formatDate_options___WEBPACK_IMPORTED_MODULE_0__.render
+/* harmony export */   "render": () => /* reexport safe */ _node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_modalEditClient_vue_vue_type_template_id_414a30ea_bindings_client_props_client_to_edit_data_visual_spinner_data_isFieldEmpty_options_updateClient_options_onSuccess_options_resetFields_options_formatDate_options___WEBPACK_IMPORTED_MODULE_0__.render
 /* harmony export */ });
-/* harmony import */ var _node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_modalEditTask_vue_vue_type_template_id_779a5b64_bindings_task_props_task_to_edit_data_message_data_visual_spinner_data_isFieldEmpty_options_updateTask_options_onSuccess_options_resetFields_options_formatDate_options___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./modalEditTask.vue?vue&type=template&id=779a5b64&bindings={"task":"props","task_to_edit":"data","message":"data","visual_spinner":"data","isFieldEmpty":"options","updateTask":"options","onSuccess":"options","resetFields":"options","formatDate":"options"} */ "./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/dashboardControl/componentsDashboardControl/modalEditTask.vue?vue&type=template&id=779a5b64&bindings={\"task\":\"props\",\"task_to_edit\":\"data\",\"message\":\"data\",\"visual_spinner\":\"data\",\"isFieldEmpty\":\"options\",\"updateTask\":\"options\",\"onSuccess\":\"options\",\"resetFields\":\"options\",\"formatDate\":\"options\"}");
+/* harmony import */ var _node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_modalEditClient_vue_vue_type_template_id_414a30ea_bindings_client_props_client_to_edit_data_visual_spinner_data_isFieldEmpty_options_updateClient_options_onSuccess_options_resetFields_options_formatDate_options___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./modalEditClient.vue?vue&type=template&id=414a30ea&bindings={"client":"props","client_to_edit":"data","visual_spinner":"data","isFieldEmpty":"options","updateClient":"options","onSuccess":"options","resetFields":"options","formatDate":"options"} */ "./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/dashboardControl/componentsDashboardControl/modalEditClient.vue?vue&type=template&id=414a30ea&bindings={\"client\":\"props\",\"client_to_edit\":\"data\",\"visual_spinner\":\"data\",\"isFieldEmpty\":\"options\",\"updateClient\":\"options\",\"onSuccess\":\"options\",\"resetFields\":\"options\",\"formatDate\":\"options\"}");
+
+
+/***/ }),
+
+/***/ "./resources/js/dashboardControl/componentsDashboardControl/modalEditTask.vue?vue&type=template&id=779a5b64&bindings={\"task\":\"props\",\"task_to_edit\":\"data\",\"visual_spinner\":\"data\",\"isFieldEmpty\":\"options\",\"updateTask\":\"options\",\"onSuccess\":\"options\",\"resetFields\":\"options\",\"formatDate\":\"options\"}":
+/*!***************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./resources/js/dashboardControl/componentsDashboardControl/modalEditTask.vue?vue&type=template&id=779a5b64&bindings={"task":"props","task_to_edit":"data","visual_spinner":"data","isFieldEmpty":"options","updateTask":"options","onSuccess":"options","resetFields":"options","formatDate":"options"} ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => /* reexport safe */ _node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_modalEditTask_vue_vue_type_template_id_779a5b64_bindings_task_props_task_to_edit_data_visual_spinner_data_isFieldEmpty_options_updateTask_options_onSuccess_options_resetFields_options_formatDate_options___WEBPACK_IMPORTED_MODULE_0__.render
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_modalEditTask_vue_vue_type_template_id_779a5b64_bindings_task_props_task_to_edit_data_visual_spinner_data_isFieldEmpty_options_updateTask_options_onSuccess_options_resetFields_options_formatDate_options___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./modalEditTask.vue?vue&type=template&id=779a5b64&bindings={"task":"props","task_to_edit":"data","visual_spinner":"data","isFieldEmpty":"options","updateTask":"options","onSuccess":"options","resetFields":"options","formatDate":"options"} */ "./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/dashboardControl/componentsDashboardControl/modalEditTask.vue?vue&type=template&id=779a5b64&bindings={\"task\":\"props\",\"task_to_edit\":\"data\",\"visual_spinner\":\"data\",\"isFieldEmpty\":\"options\",\"updateTask\":\"options\",\"onSuccess\":\"options\",\"resetFields\":\"options\",\"formatDate\":\"options\"}");
 
 
 /***/ }),
@@ -70228,7 +70426,7 @@ const _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)
   /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("i", { class: "fas fa-user-plus" }),
   /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Add New Client ")
 ], -1 /* HOISTED */)
-const _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", { class: "text-right mr-6 mt-3 text-xs text-opacity-10 " }, " * - field required ", -1 /* HOISTED */)
+const _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", { class: "text-right mr-6 mt-3 text-xs text-opacity-70 " }, " * - field required ", -1 /* HOISTED */)
 const _hoisted_4 = { class: "my-1" }
 const _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
   class: "font-bold text-sm",
@@ -70337,12 +70535,12 @@ const _hoisted_51 = { class: "my-1" }
 const _hoisted_52 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
   class: "font-bold text-sm",
   for: "programming_hours"
-}, " Programming hours: ", -1 /* HOISTED */)
+}, " *Programming hours: ", -1 /* HOISTED */)
 const _hoisted_53 = { class: "my-1" }
 const _hoisted_54 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
   class: "font-bold text-sm",
   for: "support_hours"
-}, " Support hours: ", -1 /* HOISTED */)
+}, " *Support hours: ", -1 /* HOISTED */)
 const _hoisted_55 = { class: "my-1" }
 const _hoisted_56 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
   class: "font-bold text-sm",
@@ -70357,7 +70555,7 @@ const _hoisted_59 = { class: "my-1" }
 const _hoisted_60 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
   class: "font-bold text-sm",
   for: "anniversary_date"
-}, " *Anniversary date: ", -1 /* HOISTED */)
+}, " Anniversary date: ", -1 /* HOISTED */)
 const _hoisted_61 = { class: "my-1" }
 const _hoisted_62 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
   class: "font-bold text-sm",
@@ -70697,7 +70895,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
           id: "programming_hours",
           name: "client.programming_hours",
           "onUpdate:modelValue": _cache[36] || (_cache[36] = $event => ($data.client.programming_hours = $event)),
-          onKeydown: _cache[37] || (_cache[37] = (...args) => ($options.disableMessage && $options.disableMessage(...args)))
+          onKeydown: _cache[37] || (_cache[37] = (...args) => ($options.disableMessage && $options.disableMessage(...args))),
+          required: ""
         }, null, 544 /* HYDRATE_EVENTS, NEED_PATCH */), [
           [vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.client.programming_hours]
         ])
@@ -70710,7 +70909,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
           id: "support_hours",
           name: "client.support_hours",
           "onUpdate:modelValue": _cache[38] || (_cache[38] = $event => ($data.client.support_hours = $event)),
-          onKeydown: _cache[39] || (_cache[39] = (...args) => ($options.disableMessage && $options.disableMessage(...args)))
+          onKeydown: _cache[39] || (_cache[39] = (...args) => ($options.disableMessage && $options.disableMessage(...args))),
+          required: ""
         }, null, 544 /* HYDRATE_EVENTS, NEED_PATCH */), [
           [vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.client.support_hours]
         ])
@@ -70751,8 +70951,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
           id: "anniversary_date",
           name: "client.anniversary_date",
           class: "block rounded p-0 shadow-inner  border-gray-300 w-full",
-          onKeydown: $options.disableMessage,
-          required: ""
+          onKeydown: $options.disableMessage
         }, null, 8 /* PROPS */, ["modelValue", "onKeydown"])
       ]),
       (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_61, [
@@ -71701,10 +71900,625 @@ const render = /*#__PURE__*/_withId((_ctx, _cache, $props, $setup, $data, $optio
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/dashboardControl/componentsDashboardControl/modalEditTask.vue?vue&type=template&id=779a5b64&bindings={\"task\":\"props\",\"task_to_edit\":\"data\",\"message\":\"data\",\"visual_spinner\":\"data\",\"isFieldEmpty\":\"options\",\"updateTask\":\"options\",\"onSuccess\":\"options\",\"resetFields\":\"options\",\"formatDate\":\"options\"}":
-/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/dashboardControl/componentsDashboardControl/modalEditTask.vue?vue&type=template&id=779a5b64&bindings={"task":"props","task_to_edit":"data","message":"data","visual_spinner":"data","isFieldEmpty":"options","updateTask":"options","onSuccess":"options","resetFields":"options","formatDate":"options"} ***!
-  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/dashboardControl/componentsDashboardControl/modalEditClient.vue?vue&type=template&id=414a30ea&bindings={\"client\":\"props\",\"client_to_edit\":\"data\",\"visual_spinner\":\"data\",\"isFieldEmpty\":\"options\",\"updateClient\":\"options\",\"onSuccess\":\"options\",\"resetFields\":\"options\",\"formatDate\":\"options\"}":
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/dashboardControl/componentsDashboardControl/modalEditClient.vue?vue&type=template&id=414a30ea&bindings={"client":"props","client_to_edit":"data","visual_spinner":"data","isFieldEmpty":"options","updateClient":"options","onSuccess":"options","resetFields":"options","formatDate":"options"} ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => /* binding */ render
+/* harmony export */ });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+
+
+const _hoisted_1 = { class: " break-words text-left p-5 border border-gray-300 shadow rounded-lg bg-gray-100 scrollbar scrollbar-track-blue-hrBg scrollbar-thumb-blue-darkGray" }
+const _hoisted_2 = { class: " flex justify-between" }
+const _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", { class: "text-main text-lg" }, "Edit Client", -1 /* HOISTED */)
+const _hoisted_4 = {
+  key: 0,
+  class: "text-green-500 text-sm mt-3"
+}
+const _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Client ")
+const _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", { class: "italic" }, "updated", -1 /* HOISTED */)
+const _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" successfully! ")
+const _hoisted_8 = { key: 1 }
+const _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", { class: "text-right text-blue-dark mr-6 mt-3 text-xs text-opacity-70 " }, " * - field required ", -1 /* HOISTED */)
+const _hoisted_10 = { class: "mt-3" }
+const _hoisted_11 = { class: "my-1" }
+const _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", { class: "text-blue-dark text-sm" }, "*Name:", -1 /* HOISTED */)
+const _hoisted_13 = { class: "my-1" }
+const _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", { class: "text-blue-dark text-sm" }, "*Email:", -1 /* HOISTED */)
+const _hoisted_15 = { class: "my-1" }
+const _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", { class: "text-blue-dark text-sm" }, "*Website:", -1 /* HOISTED */)
+const _hoisted_17 = { class: "my-1" }
+const _hoisted_18 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", { class: "text-blue-dark text-sm" }, "*Company:", -1 /* HOISTED */)
+const _hoisted_19 = { class: "my-1" }
+const _hoisted_20 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
+  class: "text-blue-dark text-sm",
+  for: "matriculation_number"
+}, " *Matriculation number: ", -1 /* HOISTED */)
+const _hoisted_21 = { class: "my-1" }
+const _hoisted_22 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
+  class: "text-blue-dark text-sm",
+  for: "cui"
+}, " *Cui: ", -1 /* HOISTED */)
+const _hoisted_23 = { class: "my-1" }
+const _hoisted_24 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
+  class: "text-blue-dark text-sm",
+  for: "bank_name"
+}, " *Bank name: ", -1 /* HOISTED */)
+const _hoisted_25 = { class: "my-1" }
+const _hoisted_26 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
+  class: "text-blue-dark text-sm",
+  for: "bank_account"
+}, " *Bank account: ", -1 /* HOISTED */)
+const _hoisted_27 = { class: "my-1" }
+const _hoisted_28 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
+  class: "text-blue-dark text-sm",
+  for: "address"
+}, " *Address: ", -1 /* HOISTED */)
+const _hoisted_29 = { class: "my-1" }
+const _hoisted_30 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
+  class: "text-blue-dark text-sm",
+  for: "contract_start_date"
+}, " *Contract start date: ", -1 /* HOISTED */)
+const _hoisted_31 = { class: "my-1" }
+const _hoisted_32 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
+  class: "text-blue-dark text-sm",
+  for: "contact_person_1"
+}, " *Contact person 1: ", -1 /* HOISTED */)
+const _hoisted_33 = { class: "my-1" }
+const _hoisted_34 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
+  class: "text-blue-dark text-sm",
+  for: "email_contact_person_1"
+}, " *Email contact person 1: ", -1 /* HOISTED */)
+const _hoisted_35 = { class: "my-1" }
+const _hoisted_36 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
+  class: "text-blue-dark text-sm",
+  for: "receive_notification_1"
+}, " *Receive notification 1: ", -1 /* HOISTED */)
+const _hoisted_37 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("option", { disabled: "" }, "Select:", -1 /* HOISTED */)
+const _hoisted_38 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("option", { value: "1" }, "yes", -1 /* HOISTED */)
+const _hoisted_39 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("option", { value: "0" }, "no", -1 /* HOISTED */)
+const _hoisted_40 = { class: "my-1" }
+const _hoisted_41 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
+  class: "text-blue-dark text-sm",
+  for: "contact_person_2"
+}, " Contact person 2: ", -1 /* HOISTED */)
+const _hoisted_42 = { class: "my-1" }
+const _hoisted_43 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
+  class: "text-blue-dark text-sm",
+  for: "email_contact_person_2"
+}, " Email contact person 2: ", -1 /* HOISTED */)
+const _hoisted_44 = { class: "my-1" }
+const _hoisted_45 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
+  class: "text-blue-dark text-sm",
+  for: "receive_notification_2"
+}, " Receive notification 2: ", -1 /* HOISTED */)
+const _hoisted_46 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("option", { disabled: "" }, "Select:", -1 /* HOISTED */)
+const _hoisted_47 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("option", { value: "1" }, "yes", -1 /* HOISTED */)
+const _hoisted_48 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("option", { value: "0" }, "no", -1 /* HOISTED */)
+const _hoisted_49 = { class: "my-1" }
+const _hoisted_50 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
+  class: "text-blue-dark text-sm",
+  for: "contact_person_3"
+}, " Contact person 3: ", -1 /* HOISTED */)
+const _hoisted_51 = { class: "my-1" }
+const _hoisted_52 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
+  class: "text-blue-dark text-sm",
+  for: "email_contact_person_3"
+}, " Email contact person 3: ", -1 /* HOISTED */)
+const _hoisted_53 = { class: "my-1" }
+const _hoisted_54 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
+  class: "text-blue-dark text-sm",
+  for: "receive_notification_3"
+}, " Receive notification 3: ", -1 /* HOISTED */)
+const _hoisted_55 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("option", { disabled: "" }, "Select:", -1 /* HOISTED */)
+const _hoisted_56 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("option", { value: "1" }, "yes", -1 /* HOISTED */)
+const _hoisted_57 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("option", { value: "0" }, "no", -1 /* HOISTED */)
+const _hoisted_58 = { class: "my-1" }
+const _hoisted_59 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
+  class: "text-blue-dark text-sm",
+  for: "programming_hours"
+}, " *Programming hours: ", -1 /* HOISTED */)
+const _hoisted_60 = { class: "my-1" }
+const _hoisted_61 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
+  class: "text-blue-dark text-sm",
+  for: "support_hours"
+}, " *Support hours: ", -1 /* HOISTED */)
+const _hoisted_62 = { class: "my-1" }
+const _hoisted_63 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
+  class: "text-blue-dark text-sm",
+  for: "subscription_id"
+}, " *Subscription Id: ", -1 /* HOISTED */)
+const _hoisted_64 = { class: "my-1" }
+const _hoisted_65 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
+  class: "text-blue-dark text-sm",
+  for: "new_website"
+}, " New Website: ", -1 /* HOISTED */)
+const _hoisted_66 = { class: "my-1" }
+const _hoisted_67 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
+  class: "text-blue-dark text-sm",
+  for: "anniversary_date"
+}, " Anniversary date: ", -1 /* HOISTED */)
+const _hoisted_68 = { class: "my-1" }
+const _hoisted_69 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
+  class: "text-blue-dark text-sm",
+  for: "website_link"
+}, " Website link: ", -1 /* HOISTED */)
+const _hoisted_70 = { class: "my-1" }
+const _hoisted_71 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
+  class: "text-blue-dark text-sm",
+  for: "website_backend_link"
+}, " Website backend link: ", -1 /* HOISTED */)
+const _hoisted_72 = { class: "my-1" }
+const _hoisted_73 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
+  class: "text-blue-dark text-sm",
+  for: "jira_link"
+}, " Jira link: ", -1 /* HOISTED */)
+const _hoisted_74 = { class: "my-1" }
+const _hoisted_75 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
+  class: "text-blue-dark text-sm",
+  for: "google_drive_link"
+}, " Google Drive link: ", -1 /* HOISTED */)
+const _hoisted_76 = { class: "my-1" }
+const _hoisted_77 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
+  class: "text-blue-dark text-sm",
+  for: "hosting_link"
+}, " Hosting link: ", -1 /* HOISTED */)
+const _hoisted_78 = { class: "my-1" }
+const _hoisted_79 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
+  class: "text-blue-dark text-sm",
+  for: "contract_sent_date"
+}, " Contract sent date: ", -1 /* HOISTED */)
+const _hoisted_80 = { class: "my-1" }
+const _hoisted_81 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
+  class: "text-blue-dark text-sm",
+  for: "contract_end_date"
+}, " Contract end date: ", -1 /* HOISTED */)
+const _hoisted_82 = { class: "my-1" }
+const _hoisted_83 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
+  class: "text-blue-dark text-sm",
+  for: "language"
+}, " *Language: ", -1 /* HOISTED */)
+const _hoisted_84 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("option", { disabled: "" }, "Select language", -1 /* HOISTED */)
+const _hoisted_85 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("option", { value: "ro" }, "romana", -1 /* HOISTED */)
+const _hoisted_86 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("option", { value: "en" }, "english", -1 /* HOISTED */)
+const _hoisted_87 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Update Client ")
+const _hoisted_88 = { key: 0 }
+const _hoisted_89 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("i", {
+  class: "fa fa-spinner fa-spin",
+  style: {"font-size":"18px"}
+}, null, -1 /* HOISTED */)
+const _hoisted_90 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, null, -1 /* HOISTED */)
+
+function render(_ctx, _cache, $props, $setup, $data, $options) {
+  const _component_datepicker = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("datepicker")
+
+  return ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_1, [
+    (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_2, [
+      _hoisted_3,
+      (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
+        onClick: _cache[1] || (_cache[1] = $event => (_ctx.$emit('close'))),
+        class: "mr-3 bg-blue-dark bg-opacity-80 text-white text-sm px-2   rounded border border-blue-dark font-semibold hover:bg-gray-200 hover:text-gray-800"
+      }, " Close ")
+    ]),
+    ($data.client_to_edit == '')
+      ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_4, [
+          _hoisted_5,
+          _hoisted_6,
+          _hoisted_7
+        ]))
+      : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_8, [
+          _hoisted_9,
+          (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("form", {
+            onSubmit: _cache[35] || (_cache[35] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)((...args) => (_ctx.updateClients && _ctx.updateClients(...args)), ["prevent"]))
+          }, [
+            (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("ul", _hoisted_10, [
+              (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("li", _hoisted_11, [
+                _hoisted_12,
+                (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+                  class: "pl-2 text-blue-dark  bg-white border rounded w-full border-gray-300",
+                  "onUpdate:modelValue": _cache[2] || (_cache[2] = $event => ($data.client_to_edit.name = $event)),
+                  required: ""
+                }, null, 512 /* NEED_PATCH */), [
+                  [vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.client_to_edit.name]
+                ])
+              ]),
+              (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("li", _hoisted_13, [
+                _hoisted_14,
+                (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+                  class: "pl-2 text-blue-dark  bg-white border rounded w-full border-gray-300",
+                  "onUpdate:modelValue": _cache[3] || (_cache[3] = $event => ($data.client_to_edit.email = $event)),
+                  required: ""
+                }, null, 512 /* NEED_PATCH */), [
+                  [vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.client_to_edit.email]
+                ])
+              ]),
+              (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("li", _hoisted_15, [
+                _hoisted_16,
+                (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+                  class: "pl-2 text-blue-dark  bg-white border rounded w-full border-gray-300",
+                  "onUpdate:modelValue": _cache[4] || (_cache[4] = $event => ($data.client_to_edit.website = $event)),
+                  required: ""
+                }, null, 512 /* NEED_PATCH */), [
+                  [vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.client_to_edit.website]
+                ])
+              ]),
+              (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("li", _hoisted_17, [
+                _hoisted_18,
+                (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+                  class: "pl-2 text-blue-dark  bg-white border rounded w-full border-gray-300",
+                  "onUpdate:modelValue": _cache[5] || (_cache[5] = $event => ($data.client_to_edit.company = $event)),
+                  required: ""
+                }, null, 512 /* NEED_PATCH */), [
+                  [vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.client_to_edit.company]
+                ])
+              ]),
+              (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("li", _hoisted_19, [
+                _hoisted_20,
+                (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+                  class: "pl-2 text-blue-dark  bg-white border rounded w-full border-gray-300",
+                  id: "matriculation_number",
+                  name: "client_to_edit.matriculation_number",
+                  "onUpdate:modelValue": _cache[6] || (_cache[6] = $event => ($data.client_to_edit.matriculation_number = $event)),
+                  required: ""
+                }, null, 512 /* NEED_PATCH */), [
+                  [vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.client_to_edit.matriculation_number]
+                ])
+              ]),
+              (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("li", _hoisted_21, [
+                _hoisted_22,
+                (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+                  class: "pl-2 text-blue-dark  bg-white border rounded w-full border-gray-300",
+                  id: "cui",
+                  name: "client_to_edit.cui",
+                  "onUpdate:modelValue": _cache[7] || (_cache[7] = $event => ($data.client_to_edit.cui = $event)),
+                  required: ""
+                }, null, 512 /* NEED_PATCH */), [
+                  [vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.client_to_edit.cui]
+                ])
+              ]),
+              (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("li", _hoisted_23, [
+                _hoisted_24,
+                (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+                  class: "pl-2 text-blue-dark  bg-white border rounded w-full border-gray-300",
+                  id: "bank_name",
+                  name: "client_to_edit.bank_name",
+                  "onUpdate:modelValue": _cache[8] || (_cache[8] = $event => ($data.client_to_edit.bank_name = $event)),
+                  required: ""
+                }, null, 512 /* NEED_PATCH */), [
+                  [vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.client_to_edit.bank_name]
+                ])
+              ]),
+              (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("li", _hoisted_25, [
+                _hoisted_26,
+                (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+                  class: "pl-2 text-blue-dark  bg-white border rounded w-full border-gray-300",
+                  id: "bank_account",
+                  name: "client_to_edit.bank_account",
+                  "onUpdate:modelValue": _cache[9] || (_cache[9] = $event => ($data.client_to_edit.bank_account = $event)),
+                  required: ""
+                }, null, 512 /* NEED_PATCH */), [
+                  [vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.client_to_edit.bank_account]
+                ])
+              ]),
+              (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("li", _hoisted_27, [
+                _hoisted_28,
+                (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+                  class: "pl-2 text-blue-dark  bg-white border rounded w-full border-gray-300",
+                  id: "address",
+                  name: "client_to_edit.address",
+                  "onUpdate:modelValue": _cache[10] || (_cache[10] = $event => ($data.client_to_edit.address = $event)),
+                  required: ""
+                }, null, 512 /* NEED_PATCH */), [
+                  [vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.client_to_edit.address]
+                ])
+              ]),
+              (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("li", _hoisted_29, [
+                _hoisted_30,
+                (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_datepicker, {
+                  modelValue: $data.client_to_edit.contract_start_date,
+                  "onUpdate:modelValue": _cache[11] || (_cache[11] = $event => ($data.client_to_edit.contract_start_date = $event)),
+                  id: "contract_start_date",
+                  name: "client_to_edit.contract_start_date",
+                  class: "pl-2 text-blue-dark  bg-white border rounded w-full border-gray-300",
+                  required: ""
+                }, null, 8 /* PROPS */, ["modelValue"])
+              ]),
+              (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("li", _hoisted_31, [
+                _hoisted_32,
+                (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+                  class: "pl-2 text-blue-dark  bg-white border rounded w-full border-gray-300",
+                  id: "contact_person_1",
+                  name: "client_to_edit.contact_person_1",
+                  "onUpdate:modelValue": _cache[12] || (_cache[12] = $event => ($data.client_to_edit.contact_person_1 = $event)),
+                  required: ""
+                }, null, 512 /* NEED_PATCH */), [
+                  [vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.client_to_edit.contact_person_1]
+                ])
+              ]),
+              (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("li", _hoisted_33, [
+                _hoisted_34,
+                (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+                  class: "pl-2 text-blue-dark  bg-white border rounded w-full border-gray-300",
+                  id: "email_contact_person_1",
+                  name: "client_to_edit.email_contact_person_1",
+                  "onUpdate:modelValue": _cache[13] || (_cache[13] = $event => ($data.client_to_edit.email_contact_person_1 = $event)),
+                  required: ""
+                }, null, 512 /* NEED_PATCH */), [
+                  [vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.client_to_edit.email_contact_person_1]
+                ])
+              ]),
+              (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("li", _hoisted_35, [
+                _hoisted_36,
+                (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("select", {
+                  id: "receive_notification_1",
+                  class: "pl-2 text-blue-dark  bg-white border rounded w-full border-gray-300",
+                  "onUpdate:modelValue": _cache[14] || (_cache[14] = $event => ($data.client_to_edit.receive_notification_1 = $event)),
+                  name: "client_to_edit.receive_notification_1",
+                  required: ""
+                }, [
+                  _hoisted_37,
+                  _hoisted_38,
+                  _hoisted_39
+                ], 512 /* NEED_PATCH */), [
+                  [vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.client_to_edit.receive_notification_1]
+                ])
+              ]),
+              (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("li", _hoisted_40, [
+                _hoisted_41,
+                (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+                  class: "pl-2 text-blue-dark  bg-white border rounded w-full border-gray-300",
+                  id: "contact_person_2",
+                  name: "client_to_edit.contact_person_2",
+                  "onUpdate:modelValue": _cache[15] || (_cache[15] = $event => ($data.client_to_edit.contact_person_2 = $event))
+                }, null, 512 /* NEED_PATCH */), [
+                  [vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.client_to_edit.contact_person_2]
+                ])
+              ]),
+              (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("li", _hoisted_42, [
+                _hoisted_43,
+                (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+                  class: "pl-2 text-blue-dark  bg-white border rounded w-full border-gray-300",
+                  id: "email_contact_person_2",
+                  name: "client_to_edit.email_contact_person_2",
+                  "onUpdate:modelValue": _cache[16] || (_cache[16] = $event => ($data.client_to_edit.email_contact_person_2 = $event))
+                }, null, 512 /* NEED_PATCH */), [
+                  [vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.client_to_edit.email_contact_person_2]
+                ])
+              ]),
+              (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("li", _hoisted_44, [
+                _hoisted_45,
+                (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("select", {
+                  id: "receive_notification_2",
+                  class: "pl-2 text-blue-dark  bg-white border rounded w-full border-gray-300",
+                  "onUpdate:modelValue": _cache[17] || (_cache[17] = $event => ($data.client_to_edit.receive_notification_2 = $event)),
+                  name: "client_to_edit.receive_notification_2"
+                }, [
+                  _hoisted_46,
+                  _hoisted_47,
+                  _hoisted_48
+                ], 512 /* NEED_PATCH */), [
+                  [vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.client_to_edit.receive_notification_2]
+                ])
+              ]),
+              (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("li", _hoisted_49, [
+                _hoisted_50,
+                (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+                  class: "pl-2 text-blue-dark  bg-white border rounded w-full border-gray-300",
+                  id: "contact_person_3",
+                  name: "client_to_edit.contact_person_3",
+                  "onUpdate:modelValue": _cache[18] || (_cache[18] = $event => ($data.client_to_edit.contact_person_3 = $event))
+                }, null, 512 /* NEED_PATCH */), [
+                  [vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.client_to_edit.contact_person_3]
+                ])
+              ]),
+              (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("li", _hoisted_51, [
+                _hoisted_52,
+                (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+                  class: "pl-2 text-blue-dark  bg-white border rounded w-full border-gray-300",
+                  id: "email_contact_person_3",
+                  name: "client_to_edit.email_contact_person_3",
+                  "onUpdate:modelValue": _cache[19] || (_cache[19] = $event => ($data.client_to_edit.email_contact_person_3 = $event))
+                }, null, 512 /* NEED_PATCH */), [
+                  [vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.client_to_edit.email_contact_person_3]
+                ])
+              ]),
+              (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("li", _hoisted_53, [
+                _hoisted_54,
+                (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("select", {
+                  id: "receive_notification_3",
+                  class: "pl-2 text-blue-dark  bg-white border rounded w-full border-gray-300",
+                  "onUpdate:modelValue": _cache[20] || (_cache[20] = $event => ($data.client_to_edit.receive_notification_3 = $event)),
+                  name: "client_to_edit.receive_notification_3"
+                }, [
+                  _hoisted_55,
+                  _hoisted_56,
+                  _hoisted_57
+                ], 512 /* NEED_PATCH */), [
+                  [vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.client_to_edit.receive_notification_3]
+                ])
+              ]),
+              (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("li", _hoisted_58, [
+                _hoisted_59,
+                (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+                  class: "pl-2 text-blue-dark  bg-white border rounded w-full border-gray-300",
+                  id: "programming_hours",
+                  name: "client_to_edit.programming_hours",
+                  "onUpdate:modelValue": _cache[21] || (_cache[21] = $event => ($data.client_to_edit.programming_hours = $event)),
+                  required: ""
+                }, null, 512 /* NEED_PATCH */), [
+                  [vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.client_to_edit.programming_hours]
+                ])
+              ]),
+              (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("li", _hoisted_60, [
+                _hoisted_61,
+                (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+                  class: "pl-2 text-blue-dark  bg-white border rounded w-full border-gray-300",
+                  id: "support_hours",
+                  name: "client_to_edit.support_hours",
+                  "onUpdate:modelValue": _cache[22] || (_cache[22] = $event => ($data.client_to_edit.support_hours = $event)),
+                  required: ""
+                }, null, 512 /* NEED_PATCH */), [
+                  [vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.client_to_edit.support_hours]
+                ])
+              ]),
+              (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("li", _hoisted_62, [
+                _hoisted_63,
+                (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+                  class: "pl-2 text-blue-dark  bg-white border rounded w-full border-gray-300",
+                  id: "subscription_id",
+                  name: "client_to_edit.subscription_id",
+                  "onUpdate:modelValue": _cache[23] || (_cache[23] = $event => ($data.client_to_edit.subscription_id = $event)),
+                  required: ""
+                }, null, 512 /* NEED_PATCH */), [
+                  [vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.client_to_edit.subscription_id]
+                ])
+              ]),
+              (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("li", _hoisted_64, [
+                _hoisted_65,
+                (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+                  class: "pl-2 text-blue-dark  bg-white border rounded w-full border-gray-300",
+                  id: "new_website",
+                  name: "client_to_edit.new_website",
+                  "onUpdate:modelValue": _cache[24] || (_cache[24] = $event => ($data.client_to_edit.new_website = $event))
+                }, null, 512 /* NEED_PATCH */), [
+                  [vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.client_to_edit.new_website]
+                ])
+              ]),
+              (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("li", _hoisted_66, [
+                _hoisted_67,
+                (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_datepicker, {
+                  modelValue: $data.client_to_edit.anniversary_date,
+                  "onUpdate:modelValue": _cache[25] || (_cache[25] = $event => ($data.client_to_edit.anniversary_date = $event)),
+                  placeholder: "click here to choose a date",
+                  id: "anniversary_date",
+                  name: "client_to_edit.anniversary_date",
+                  class: "pl-2 text-blue-dark  bg-white border rounded w-full border-gray-300"
+                }, null, 8 /* PROPS */, ["modelValue"])
+              ]),
+              (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("li", _hoisted_68, [
+                _hoisted_69,
+                (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+                  class: "pl-2 text-blue-dark  bg-white border rounded w-full border-gray-300",
+                  id: "website_link",
+                  name: "client_to_edit.website_link",
+                  "onUpdate:modelValue": _cache[26] || (_cache[26] = $event => ($data.client_to_edit.website_link = $event))
+                }, null, 512 /* NEED_PATCH */), [
+                  [vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.client_to_edit.website_link]
+                ])
+              ]),
+              (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("li", _hoisted_70, [
+                _hoisted_71,
+                (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+                  class: "pl-2 text-blue-dark  bg-white border rounded w-full border-gray-300",
+                  id: "website_backend_link",
+                  name: "client_to_edit.website_backend_link",
+                  "onUpdate:modelValue": _cache[27] || (_cache[27] = $event => ($data.client_to_edit.website_backend_link = $event))
+                }, null, 512 /* NEED_PATCH */), [
+                  [vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.client_to_edit.website_backend_link]
+                ])
+              ]),
+              (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("li", _hoisted_72, [
+                _hoisted_73,
+                (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+                  class: "pl-2 text-blue-dark  bg-white border rounded w-full border-gray-300",
+                  id: "jira_link",
+                  name: "client_to_edit.jira_link",
+                  "onUpdate:modelValue": _cache[28] || (_cache[28] = $event => ($data.client_to_edit.jira_link = $event))
+                }, null, 512 /* NEED_PATCH */), [
+                  [vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.client_to_edit.jira_link]
+                ])
+              ]),
+              (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("li", _hoisted_74, [
+                _hoisted_75,
+                (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+                  class: "pl-2 text-blue-dark  bg-white border rounded w-full border-gray-300",
+                  id: "google_drive_link",
+                  name: "client_to_edit.google_drive_link",
+                  "onUpdate:modelValue": _cache[29] || (_cache[29] = $event => ($data.client_to_edit.google_drive_link = $event))
+                }, null, 512 /* NEED_PATCH */), [
+                  [vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.client_to_edit.google_drive_link]
+                ])
+              ]),
+              (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("li", _hoisted_76, [
+                _hoisted_77,
+                (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
+                  class: "pl-2 text-blue-dark  bg-white border rounded w-full border-gray-300",
+                  id: "hosting_link",
+                  name: "client_to_edit.hosting_link",
+                  "onUpdate:modelValue": _cache[30] || (_cache[30] = $event => ($data.client_to_edit.hosting_link = $event))
+                }, null, 512 /* NEED_PATCH */), [
+                  [vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.client_to_edit.hosting_link]
+                ])
+              ]),
+              (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("li", _hoisted_78, [
+                _hoisted_79,
+                (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_datepicker, {
+                  modelValue: $data.client_to_edit.contract_sent_date,
+                  "onUpdate:modelValue": _cache[31] || (_cache[31] = $event => ($data.client_to_edit.contract_sent_date = $event)),
+                  placeholder: "click here to choose a date",
+                  id: "contract_sent_date",
+                  name: "client_to_edit.contract_sent_date",
+                  class: "pl-2 text-blue-dark  bg-white border rounded w-full border-gray-300"
+                }, null, 8 /* PROPS */, ["modelValue"])
+              ]),
+              (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("li", _hoisted_80, [
+                _hoisted_81,
+                (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_datepicker, {
+                  modelValue: $data.client_to_edit.contract_end_date,
+                  "onUpdate:modelValue": _cache[32] || (_cache[32] = $event => ($data.client_to_edit.contract_end_date = $event)),
+                  "lower-limit": new Date(),
+                  placeholder: "click here to choose a date",
+                  id: "contract_end_date",
+                  name: "client_to_edit.contract_end_date",
+                  class: "pl-2 text-blue-dark  bg-white border rounded w-full border-gray-300"
+                }, null, 8 /* PROPS */, ["modelValue", "lower-limit"])
+              ]),
+              (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("li", _hoisted_82, [
+                _hoisted_83,
+                (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("select", {
+                  id: "language",
+                  class: "pl-2 text-blue-dark  bg-white border rounded w-full border-gray-300",
+                  "onUpdate:modelValue": _cache[33] || (_cache[33] = $event => ($data.client_to_edit.language = $event)),
+                  name: "client_to_edit.language",
+                  required: ""
+                }, [
+                  _hoisted_84,
+                  _hoisted_85,
+                  _hoisted_86
+                ], 512 /* NEED_PATCH */), [
+                  [vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.client_to_edit.language]
+                ])
+              ])
+            ]),
+            (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
+              onClick: _cache[34] || (_cache[34] = $event => ($options.updateClient($data.client_to_edit.id))),
+              class: "bg-blue-dark bg-opacity-90 text-white px-3.5 py-1.5 mt-5 rounded font-semibold"
+            }, [
+              _hoisted_87,
+              ($data.visual_spinner)
+                ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_88, [
+                    _hoisted_89
+                  ]))
+                : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)
+            ])
+          ], 32 /* HYDRATE_EVENTS */),
+          _hoisted_90
+        ]))
+  ]))
+}
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/dashboardControl/componentsDashboardControl/modalEditTask.vue?vue&type=template&id=779a5b64&bindings={\"task\":\"props\",\"task_to_edit\":\"data\",\"visual_spinner\":\"data\",\"isFieldEmpty\":\"options\",\"updateTask\":\"options\",\"onSuccess\":\"options\",\"resetFields\":\"options\",\"formatDate\":\"options\"}":
+/*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/dashboardControl/componentsDashboardControl/modalEditTask.vue?vue&type=template&id=779a5b64&bindings={"task":"props","task_to_edit":"data","visual_spinner":"data","isFieldEmpty":"options","updateTask":"options","onSuccess":"options","resetFields":"options","formatDate":"options"} ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -71726,47 +72540,48 @@ const _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVN
 const _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", { class: "italic" }, "updated", -1 /* HOISTED */)
 const _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" successfully! ")
 const _hoisted_8 = { key: 1 }
-const _hoisted_9 = { class: "mt-3" }
-const _hoisted_10 = { class: "mt-2" }
-const _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", { class: "text-blue-dark text-sm" }, "Name:", -1 /* HOISTED */)
-const _hoisted_12 = { class: "mt-2" }
-const _hoisted_13 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", { class: "text-blue-dark text-sm" }, "Client id:", -1 /* HOISTED */)
-const _hoisted_14 = { class: "mt-2" }
-const _hoisted_15 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h2", { class: "text-blue-dark text-sm" }, "Task Date:", -1 /* HOISTED */)
-const _hoisted_16 = { class: " pl-2 text-blue-dark  bg-gray-200 bg-opacity-50  shadow-inner" }
-const _hoisted_17 = { class: "mt-2" }
-const _hoisted_18 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
+const _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", { class: "text-right text-blue-dark mr-6 mt-3 text-xs text-opacity-70 " }, " * - field required ", -1 /* HOISTED */)
+const _hoisted_10 = { class: "mt-3" }
+const _hoisted_11 = { class: "mt-2" }
+const _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", { class: "text-blue-dark text-sm" }, "Name:", -1 /* HOISTED */)
+const _hoisted_13 = { class: "mt-2" }
+const _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", { class: "text-blue-dark text-sm" }, "Client id:", -1 /* HOISTED */)
+const _hoisted_15 = { class: "mt-2" }
+const _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h2", { class: "text-blue-dark text-sm" }, "Task Date:", -1 /* HOISTED */)
+const _hoisted_17 = { class: " pl-2 text-blue-dark  bg-gray-200 bg-opacity-50  shadow-inner" }
+const _hoisted_18 = { class: "mt-2" }
+const _hoisted_19 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
   class: "text-blue-dark text-sm",
   for: "type"
 }, " Task type: ", -1 /* HOISTED */)
-const _hoisted_19 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("option", {
+const _hoisted_20 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("option", {
   disabled: "",
   value: ""
 }, "Select type", -1 /* HOISTED */)
-const _hoisted_20 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("option", null, "0", -1 /* HOISTED */)
-const _hoisted_21 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("option", null, "1", -1 /* HOISTED */)
-const _hoisted_22 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("option", null, "2", -1 /* HOISTED */)
-const _hoisted_23 = { class: "mt-2" }
-const _hoisted_24 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", { class: "text-blue-dark text-sm" }, "Details:", -1 /* HOISTED */)
-const _hoisted_25 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
-  class: "font-bold text-sm",
+const _hoisted_21 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("option", null, "0", -1 /* HOISTED */)
+const _hoisted_22 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("option", null, "1", -1 /* HOISTED */)
+const _hoisted_23 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("option", null, "2", -1 /* HOISTED */)
+const _hoisted_24 = { class: "mt-2" }
+const _hoisted_25 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", { class: "text-blue-dark text-sm" }, "Details:", -1 /* HOISTED */)
+const _hoisted_26 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", {
+  class: "text-blue-dark text-sm",
   for: "invoice_date"
 }, " Invoice Date: ", -1 /* HOISTED */)
-const _hoisted_26 = { class: "mt-2" }
-const _hoisted_27 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", { class: "text-blue-dark text-sm" }, "Programming worked minutes:", -1 /* HOISTED */)
-const _hoisted_28 = { class: "mt-2" }
-const _hoisted_29 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", { class: "text-blue-dark text-sm" }, "Support worked minutes:", -1 /* HOISTED */)
-const _hoisted_30 = { class: "mt-2" }
-const _hoisted_31 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h2", { class: "text-blue-dark text-sm" }, "Created at:", -1 /* HOISTED */)
-const _hoisted_32 = { class: "pl-2 text-blue-dark  bg-gray-200 bg-opacity-50  shadow-inner" }
-const _hoisted_33 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Update Task ")
-const _hoisted_34 = { key: 0 }
-const _hoisted_35 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("i", {
+const _hoisted_27 = { class: "mt-2" }
+const _hoisted_28 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", { class: "text-blue-dark text-sm" }, "Programming worked minutes:", -1 /* HOISTED */)
+const _hoisted_29 = { class: "mt-2" }
+const _hoisted_30 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("label", { class: "text-blue-dark text-sm" }, "Support worked minutes:", -1 /* HOISTED */)
+const _hoisted_31 = { class: "mt-2" }
+const _hoisted_32 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h2", { class: "text-blue-dark text-sm" }, "Created at:", -1 /* HOISTED */)
+const _hoisted_33 = { class: "pl-2 text-blue-dark  bg-gray-200 bg-opacity-50  shadow-inner" }
+const _hoisted_34 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Update Task ")
+const _hoisted_35 = { key: 0 }
+const _hoisted_36 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("i", {
   class: "fa fa-spinner fa-spin",
   style: {"font-size":"18px"}
 }, null, -1 /* HOISTED */)
-const _hoisted_36 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, null, -1 /* HOISTED */)
-const _hoisted_37 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", { class: "mt-7 text-blue-dark text-opacity-60 text-xs" }, " task type: 0-upgrade, 1-intern, 2-request ", -1 /* HOISTED */)
+const _hoisted_37 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", null, null, -1 /* HOISTED */)
+const _hoisted_38 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", { class: "mt-7 text-blue-dark text-opacity-60 text-xs" }, " task type: 0-upgrade, 1-intern, 2-request ", -1 /* HOISTED */)
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_datepicker = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("datepicker")
@@ -71789,32 +72604,35 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
           (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("form", {
             onSubmit: _cache[10] || (_cache[10] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)((...args) => (_ctx.updateTasks && _ctx.updateTasks(...args)), ["prevent"]))
           }, [
-            (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("ul", _hoisted_9, [
-              (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("li", _hoisted_10, [
-                _hoisted_11,
+            _hoisted_9,
+            (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("ul", _hoisted_10, [
+              (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("li", _hoisted_11, [
+                _hoisted_12,
                 (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
                   class: "pl-2 text-blue-dark  bg-white border rounded w-full border-gray-300",
-                  "onUpdate:modelValue": _cache[2] || (_cache[2] = $event => ($data.task_to_edit.name = $event))
+                  "onUpdate:modelValue": _cache[2] || (_cache[2] = $event => ($data.task_to_edit.name = $event)),
+                  required: ""
                 }, null, 512 /* NEED_PATCH */), [
                   [vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.task_to_edit.name]
                 ])
               ]),
-              (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("li", _hoisted_12, [
-                _hoisted_13,
+              (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("li", _hoisted_13, [
+                _hoisted_14,
                 (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
                   class: "pl-2 text-blue-dark bg-white border rounded w-full border-gray-300",
-                  "onUpdate:modelValue": _cache[3] || (_cache[3] = $event => ($data.task_to_edit.client_id = $event))
+                  "onUpdate:modelValue": _cache[3] || (_cache[3] = $event => ($data.task_to_edit.client_id = $event)),
+                  required: ""
                 }, null, 512 /* NEED_PATCH */), [
                   [vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.task_to_edit.client_id]
                 ])
               ]),
               (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                    not editing"),
-              (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("li", _hoisted_14, [
-                _hoisted_15,
-                (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", _hoisted_16, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.task_to_edit.task_date), 1 /* TEXT */)
+              (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("li", _hoisted_15, [
+                _hoisted_16,
+                (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", _hoisted_17, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.task_to_edit.task_date), 1 /* TEXT */)
               ]),
-              (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("li", _hoisted_17, [
-                _hoisted_18,
+              (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("li", _hoisted_18, [
+                _hoisted_19,
                 (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("select", {
                   id: "type",
                   class: "block rounded p-0 shadow-inner  border-gray-300 w-1/2",
@@ -71822,16 +72640,16 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
                   name: "task.type",
                   required: ""
                 }, [
-                  _hoisted_19,
                   _hoisted_20,
                   _hoisted_21,
-                  _hoisted_22
+                  _hoisted_22,
+                  _hoisted_23
                 ], 512 /* NEED_PATCH */), [
                   [vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, $data.task_to_edit.type]
                 ])
               ]),
-              (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("li", _hoisted_23, [
-                _hoisted_24,
+              (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("li", _hoisted_24, [
+                _hoisted_25,
                 (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("textarea", {
                   class: "pl-2 text-blue-dark  bg-white border rounded w-full border-gray-300",
                   placeholder: "empty",
@@ -71841,11 +72659,11 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
                 ])
               ]),
               (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("li", null, [
-                _hoisted_25,
+                _hoisted_26,
                 (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_datepicker, {
                   placeholder: "click here to choose a date",
-                  modelValue: $data.task_to_edit.invoice_date,
-                  "onUpdate:modelValue": _cache[6] || (_cache[6] = $event => ($data.task_to_edit.invoice_date = $event)),
+                  modelValue: $data.task_to_edit.invoiced_date,
+                  "onUpdate:modelValue": _cache[6] || (_cache[6] = $event => ($data.task_to_edit.invoiced_date = $event)),
                   "lower-limit": new Date(),
                   id: "invoice_date",
                   name: "task.invoice_date",
@@ -71853,8 +72671,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
                   required: ""
                 }, null, 8 /* PROPS */, ["modelValue", "lower-limit"])
               ]),
-              (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("li", _hoisted_26, [
-                _hoisted_27,
+              (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("li", _hoisted_27, [
+                _hoisted_28,
                 (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
                   class: "pl-2 text-blue-dark  bg-white border rounded w-full border-gray-300",
                   placeholder: "empty",
@@ -71863,8 +72681,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
                   [vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.task_to_edit.programming_worked_minutes]
                 ])
               ]),
-              (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("li", _hoisted_28, [
-                _hoisted_29,
+              (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("li", _hoisted_29, [
+                _hoisted_30,
                 (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
                   class: "pl-2 text-blue-dark  bg-white border rounded w-full border-gray-300",
                   placeholder: "empty",
@@ -71873,29 +72691,25 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
                   [vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.task_to_edit.support_worked_minutes]
                 ])
               ]),
-              (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("li", _hoisted_30, [
-                _hoisted_31,
-                (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", _hoisted_32, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.task_to_edit.created_at), 1 /* TEXT */)
+              (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("li", _hoisted_31, [
+                _hoisted_32,
+                (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("p", _hoisted_33, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.task_to_edit.created_at), 1 /* TEXT */)
               ])
             ]),
             (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("button", {
               onClick: _cache[9] || (_cache[9] = $event => ($options.updateTask($props.task.id))),
               class: "bg-blue-dark bg-opacity-90 text-white px-3.5 py-1.5 mt-5 rounded font-semibold"
             }, [
-              _hoisted_33,
+              _hoisted_34,
               ($data.visual_spinner)
-                ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_34, [
-                    _hoisted_35
+                ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_35, [
+                    _hoisted_36
                   ]))
                 : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)
-            ]),
-            (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
-              class: "text-green-600 opacity-90",
-              innerHTML: $data.message
-            }, null, 8 /* PROPS */, ["innerHTML"])
+            ])
           ], 32 /* HYDRATE_EVENTS */),
-          _hoisted_36,
-          _hoisted_37
+          _hoisted_37,
+          _hoisted_38
         ]))
   ]))
 }
@@ -71974,6 +72788,7 @@ const _hoisted_12 = { class: " my-5 mr-5 flex-grow inline-block" }
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_modal_details_client = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("modal-details-client")
+  const _component_modal_edit_client = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("modal-edit-client")
 
   return ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_1, [
     (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_2, [
@@ -72017,13 +72832,14 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
             onClose: _cache[1] || (_cache[1] = $event => ($data.showDetailsModal = false))
           }, null, 8 /* PROPS */, ["client"]))
         : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true),
-      (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("            <modal-edit-task"),
-      (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                @if_updated_successfully=\"getTasks\""),
-      (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                v-if=\"showEditModal\""),
-      (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                @close=\"showEditModal = false\""),
-      (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                v-bind:task=\"individual_task\""),
-      (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("            >"),
-      (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("            </modal-edit-task>")
+      ($data.showEditModal)
+        ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_modal_edit_client, {
+            key: 1,
+            onIf_updated_successfully: $options.getClients,
+            onClose: _cache[2] || (_cache[2] = $event => ($data.showEditModal = false)),
+            client: $data.individual_client
+          }, null, 8 /* PROPS */, ["onIf_updated_successfully", "client"]))
+        : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)
     ])
   ]))
 }

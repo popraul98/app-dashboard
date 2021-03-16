@@ -5,7 +5,7 @@
         <div class="sticky top-0 font-semibold text-white bg-blue-hrBg p-3 rounded-t-lg">
             <i class='fas fa-user-plus'></i> Add New Client
         </div>
-        <div class="text-right mr-6 mt-3 text-xs text-opacity-10 ">
+        <div class="text-right mr-6 mt-3 text-xs text-opacity-70 ">
             * - field required
         </div>
 
@@ -43,7 +43,6 @@
                     name="client.email"
                     v-model="client.email"
                     @keydown="disableMessage"
-
                     required
                 >
             </div>
@@ -361,7 +360,7 @@
                     class="font-bold text-sm"
                     for="programming_hours"
                 >
-                    Programming hours:
+                    *Programming hours:
                 </label>
                 <input
                     class="block rounded p-0 shadow-inner  border-gray-300 w-full "
@@ -370,6 +369,7 @@
                     name="client.programming_hours"
                     v-model="client.programming_hours"
                     @keydown="disableMessage"
+                    required
                 >
             </div>
 
@@ -378,7 +378,7 @@
                     class="font-bold text-sm"
                     for="support_hours"
                 >
-                    Support hours:
+                    *Support hours:
                 </label>
                 <input
                     class="block rounded p-0 shadow-inner  border-gray-300 w-full "
@@ -387,6 +387,7 @@
                     name="client.support_hours"
                     v-model="client.support_hours"
                     @keydown="disableMessage"
+                    required
                 >
             </div>
 
@@ -430,7 +431,7 @@
                     class="font-bold text-sm"
                     for="anniversary_date"
                 >
-                    *Anniversary date:
+                    Anniversary date:
                 </label>
                 <datepicker
                     v-model="client.anniversary_date"
@@ -439,7 +440,6 @@
                     name="client.anniversary_date"
                     class="block rounded p-0 shadow-inner  border-gray-300 w-full"
                     @keydown="disableMessage"
-                    required
                 />
             </div>
 
@@ -627,12 +627,12 @@ export default {
                 contact_person_1: null,
                 email_contact_person_1: null,
                 receive_notification_1: null,
-                contact_person_2: "numepers2",
-                email_contact_person_2: "emailpers2",
-                receive_notification_2: "1",
-                contact_person_3: "numerpers3",
-                email_contact_person_3: "emailpers3",
-                receive_notification_3: "0",
+                contact_person_2: null,
+                email_contact_person_2: null,
+                receive_notification_2: null,
+                contact_person_3: null,
+                email_contact_person_3: null,
+                receive_notification_3: null,
                 programming_hours: null,
                 support_hours: null,
                 subscription_id: null,
