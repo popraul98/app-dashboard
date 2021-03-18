@@ -1,5 +1,5 @@
 <template>
-    <div v-if="tasksNotFound(out_of_date_tasks)==1" class="flex h-screen">
+    <div v-if="tasksNotFound(tasks)==1" class="flex h-screen">
         <div v-html="message" class="text-4xl text-blue-dark text-opacity-70 m-auto">
 
         </div>
@@ -9,13 +9,26 @@
 
         <div class="flex-none m-5 w-1/2 inline-block ">
             <div class="mb-3 text-left border border-gray-300 shadow rounded-lg bg-gray-100">
-                <div class="sticky top-0 font-semibold text-white bg-red-dark p-2 rounded-t-lg">
-                    <i class="text-blue-dark fa fa-tasks"></i>
-                    Out of date tasks:
+                <div class="flex justify-between sticky top-0 bg-red-dark p-2 rounded-t-lg">
+                    <div class="font-semibold text-white">
+                        <i class="text-blue-dark fa fa-tasks"></i>
+                        Out of date tasks:
+                    </div>
+                    <div>
+                        <input type="text"
+                               class="rounded text-sm p-0"
+                               placeholder="Search by name"
+                               v-model="search_item"
+                               @input="searchTask(search_item)"
+                        >
+                    </div>
                 </div>
 
                 <div class="divide p-2.5">
-
+                    <div class="text-second"
+                         v-if="tasksNotFound(out_of_date_tasks)==1">
+                        0 tasks
+                    </div>
                     <ul v-for="task in out_of_date_tasks">
                         <li class="font-semibold rounded flex items-center justify-between hover:bg-gray-200">
 
@@ -106,14 +119,18 @@ export default {
     data() {
         return {
             out_of_date_tasks: [],
-            individual_task: [],
 
+            individual_task: [],
             showDetailsModal: false,
+
             showConfirmModal: false,
             id_individual_task: null,
             name_individual_task:null,
 
             message: '',
+
+            search_item: '',
+            tasks: [],
         }
     },
     mounted() {
@@ -130,6 +147,7 @@ export default {
             axios.get('/dashboard-control-data')
                 .then((response) => {
                     this.out_of_date_tasks = response.data.out_of_date_tasks;
+                    this.tasks = this.out_of_date_tasks;
                     if (this.tasksNotFound(this.out_of_date_tasks)) {
                         this.message = 'Well done, all tasks completed.<span class="text-xl italic block text-right">0 tasks out of date.</span>';
                     }
@@ -171,11 +189,15 @@ export default {
 
                 this.toggleConfirmWindow();
             }
+        },
+        searchTask(searched_item) {
+            this.out_of_date_tasks = [];
+            for (let i = 0; i < this.tasks.length; i++) {
+                if (this.tasks[i].name.toLowerCase().indexOf(searched_item.toLowerCase()) >= 0) {
+                    this.out_of_date_tasks.push(this.tasks[i]);
+                }
+            }
         }
     },
 }
 </script>
-
-<style scoped>
-
-</style>

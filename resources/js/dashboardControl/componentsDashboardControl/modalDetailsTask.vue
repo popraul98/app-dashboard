@@ -42,7 +42,7 @@
                 <li class="mt-3">
                     <h2 class="text-blue-dark text-sm">
                         Task Date:
-                        <span class=" pl-1.5 text-xs text-blue-dark text-opacity-80">
+                        <span v-if="parseInt(dateDiffInDays(task_to_show.task_date)) > 0" class=" pl-1.5 text-xs text-blue-dark text-opacity-80">
                         ..{{ dateDiffInDays(task_to_show.task_date) }} days left
                     </span>
                     </h2>

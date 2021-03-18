@@ -54,7 +54,8 @@ class Task extends Model
     public function scopeGetTodayActiveTasks($query)
     {
         return $query->whereDate('task_date', Carbon::today())
-            ->where('closed_date', NULL);
+            ->where('closed_date', NULL)
+            ->orderBy('created_at', 'DESC');
     }
 
     public function scopeGetCompletedTasks($query)
@@ -71,15 +72,25 @@ class Task extends Model
         return $query->whereBetween('task_date', [$todayDate, $endDate])
             ->where('closed_date', NULL)
             ->where('type', 0)
-            ->orderBy('task_date', 'ASC');
+            ->orderBy('task_date', 'ASC')
+            ->orderBy('created_at', 'DESC');
 
+    }
+
+    public function scopeGetAllUncompletedTasks($query)
+    {
+        $todayDate = Carbon::today();
+
+        return $query->whereDate('task_date', '>=', $todayDate)
+            ->where('closed_date', NULL)
+            ->orderBy('task_date', 'ASC');
     }
 
     public function scopeGetOutOfDateTasks($query)
     {
         $todayDate = Carbon::today();
 
-        return $query->whereDate('task_date','<=', $todayDate)
+        return $query->whereDate('task_date', '<=', $todayDate)
             ->where('closed_date', NULL)
             ->orderBy('task_date', 'ASC');
     }

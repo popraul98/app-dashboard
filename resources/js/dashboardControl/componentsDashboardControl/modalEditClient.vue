@@ -14,12 +14,12 @@
             Client <span class="italic">updated</span> successfully!
         </div>
         <div v-else>
-            <div class="text-right text-blue-dark mr-6 mt-3 text-xs text-opacity-70 ">
-                * - field required
-            </div>
-            <form @submit.prevent="updateClients">
 
-                <ul class="mt-3">
+            <form @submit.prevent="updateClients">
+                <div class="text-right text-blue-dark mr-5 mt-3 text-xs text-opacity-70 ">
+                    * - field required
+                </div>
+                <ul>
 
                     <li class="my-1">
                         <label class="text-blue-dark text-sm">*Name:</label>
@@ -32,24 +32,24 @@
                     <li class="my-1">
                         <label class="text-blue-dark text-sm">*Email:</label>
                         <input class="pl-2 text-blue-dark  bg-white border rounded w-full border-gray-300"
-                            v-model="client_to_edit.email"
-                            required
+                               v-model="client_to_edit.email"
+                               required
                         >
                     </li>
 
                     <li class="my-1">
                         <label class="text-blue-dark text-sm">*Website:</label>
                         <input class="pl-2 text-blue-dark  bg-white border rounded w-full border-gray-300"
-                            v-model="client_to_edit.website"
-                            required
+                               v-model="client_to_edit.website"
+                               required
                         >
                     </li>
 
                     <li class="my-1">
                         <label class="text-blue-dark text-sm">*Company:</label>
                         <input class="pl-2 text-blue-dark  bg-white border rounded w-full border-gray-300"
-                            v-model="client_to_edit.company"
-                            required
+                               v-model="client_to_edit.company"
+                               required
                         >
                     </li>
 
@@ -579,7 +579,7 @@ export default {
         }
     },
     mounted() {
-
+        this.client_to_edit = this.client;
     },
     watch: {
         client(newClient) {
@@ -640,13 +640,10 @@ export default {
         onSuccess() {
             this.visual_spinner = false;
 
-            this.resetFields();
             this.$emit('if_updated_successfully');
             this.client_to_edit = '';
         },
-        resetFields() {
 
-        },
         formatDate(date) {
             var d = new Date(date),
                 month = '' + (d.getMonth() + 1),

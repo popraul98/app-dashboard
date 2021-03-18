@@ -3,9 +3,20 @@
 
         <div class="flex-none m-5 w-1/2 inline-block ">
             <div class="mb-3 text-left border border-gray-300 shadow rounded-lg bg-gray-100">
-                <div class="sticky top-0 font-semibold text-white bg-blue-hrBg p-2 rounded-t-lg">
-                    <i class="text-blue-dark fa fa-tasks"></i>
-                    Completed tasks
+
+                <div class="flex justify-between sticky top-0 bg-blue-hrBg p-2 rounded-t-lg">
+                    <div class="font-semibold text-white">
+                        <i class="text-blue-dark fa fa-tasks"></i>
+                        Completed tasks
+                    </div>
+                    <div>
+                        <input type="text"
+                               class="rounded text-sm p-0"
+                               placeholder="Search by name"
+                               v-model="search_item"
+                               @input="searchTask(search_item)"
+                        >
+                    </div>
                 </div>
 
                 <div class="divide p-2.5">
@@ -76,6 +87,9 @@ export default {
             completed_tasks: [],
             individual_task: [],
             showDetailsModal: false,
+            search_item: '',
+
+            tasks: [],
         }
     },
     mounted() {
@@ -86,6 +100,7 @@ export default {
             axios.get('/dashboard-control-data')
                 .then((response) => {
                     this.completed_tasks = response.data.completed_tasks
+                    this.tasks = this.completed_tasks
                 });
         },
         tasksNotFound(obj) {
@@ -103,6 +118,14 @@ export default {
             }
             this.showDetailsModal = true;
         },
+        searchTask(searched_item) {
+            this.completed_tasks = [];
+            for (let i = 0; i < this.tasks.length; i++) {
+                if (this.tasks[i].name.toLowerCase().indexOf(searched_item.toLowerCase()) >= 0) {
+                    this.completed_tasks.push(this.tasks[i]);
+                }
+            }
+        }
     },
 }
 </script>

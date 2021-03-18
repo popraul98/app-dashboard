@@ -22,80 +22,80 @@
 
         {{--Home--}}
         <li class=" pl-6 text-sm font-normal items-center pt-2 text-blue-hrBg">
-            <div class="transition duration-800 ease-in-out transform hover:-translate-y-1 hover:scale-100">
-                <router-link to="/" tag="button" exact>
+            <router-link to="/" tag="button" exact>
+                <div class="transition duration-800 ease-in-out transform hover:-translate-y-1 hover:scale-100">
                     <i class="fa fa-code  "></i>
                     <span class="text-white">
                     Home
                     </span>
-                </router-link>
-            </div>
+                </div>
+            </router-link>
         </li>
 
         {{--            CLIENTS--}}
         <p class=" pl-6 text font-semibold pt-3">CLIENTS:</p>
 
         <li class=" pl-6 text-sm font-normal items-center pt-2 text-blue-hrBg">
-            <div class="transition duration-800 ease-in-out transform hover:-translate-y-1 hover:scale-100">
-                <router-link to="/add-client" tag="button" exact>
+            <router-link to="/add-client" tag="button" exact>
+                <div class="transition duration-800 ease-in-out transform hover:-translate-y-1 hover:scale-100">
                     <i class="fa fa-code "></i>
                     <span class="text-white">
                     Add Client
                     </span>
-                </router-link>
-            </div>
+                </div>
+            </router-link>
         </li>
         <li class=" pl-6 text-sm font-normal items-center pt-2 text-blue-hrBg">
-            <div class="transition duration-800 ease-in-out transform hover:-translate-y-1 hover:scale-100">
-                <router-link to="/manage-clients" tag="button" exact>
+            <router-link to="/manage-clients" tag="button" exact>
+                <div class="transition duration-800 ease-in-out transform hover:-translate-y-1 hover:scale-100">
                     <i class="fa fa-code "></i>
                     <span class="text-white">
                     Manage Clients
                     </span>
-                </router-link>
-            </div>
+                </div>
+            </router-link>
         </li>
 
         {{--            TASKS--}}
         <p class=" pl-6 text font-semibold pt-3">TASKS:</p>
         <li class=" pl-6 text-sm font-normal items-center pt-2 text-blue-hrBg">
-            <div class="transition duration-800 ease-in-out transform hover:-translate-y-1 hover:scale-100">
-                <router-link to="/add-task" tag="button" exact>
+            <router-link to="/add-task" tag="button" exact>
+                <div class="transition duration-800 ease-in-out transform hover:-translate-y-1 hover:scale-100">
                     <i class="fa fa-code "></i>
                     <span class="text-white">
                     Add Task
                     </span>
-                </router-link>
-            </div>
+                </div>
+            </router-link>
         </li>
         <li class=" pl-6 text-sm font-normal items-center pt-2 text-blue-hrBg ">
-            <div class="transition duration-800 ease-in-out transform hover:-translate-y-1 hover:scale-100">
-                <router-link to="/manage-tasks" tag="button" exact>
+            <router-link to="/manage-tasks" tag="button" exact>
+                <div class="transition duration-800 ease-in-out transform hover:-translate-y-1 hover:scale-100">
                     <i class="fa fa-code  "></i>
                     <span class="text-white"> Manage Tasks</span>
-                </router-link>
-            </div>
+                </div>
+            </router-link>
         </li>
         <li class=" pl-6 text-sm font-normal items-center pt-2 text-blue-hrBg">
-            <div class="transition duration-800 ease-in-out transform hover:-translate-y-1 hover:scale-100">
-                <router-link to="/completed-tasks" tag="button" exact>
+            <router-link to="/completed-tasks" tag="button" exact>
+                <div class="transition duration-800 ease-in-out transform hover:-translate-y-1 hover:scale-100">
                     <i class="fa fa-code "></i>
                     <span class="text-white">
                         Completed Tasks
                     </span>
-                </router-link>
-            </div>
+                </div>
+            </router-link>
         </li>
 
         <li class=" pl-6 text-sm font-normal items-center pt-2 text-blue-hrBg">
-            <div class="transition duration-800 ease-in-out transform hover:-translate-y-1 hover:scale-100">
-                <router-link to="/out-of-date-tasks" tag="button" exact>
+            <router-link to="/out-of-date-tasks" tag="button" exact>
+                <div class="transition duration-800 ease-in-out transform hover:-translate-y-1 hover:scale-100">
                     <i class="fa fa-code "></i>
                     <span class="text-white">
                         Out of date Tasks
                     </span>
-                </router-link>
-            </div>
+                </div>
+            </router-link>
         </li>
 
 

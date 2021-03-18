@@ -95,6 +95,53 @@
 
 
             </div>
+            <div class="mb-3 text-left border border-gray-300 shadow rounded-lg bg-gray-100">
+                <div class="font-semibold text-white bg-blue-hrBg p-2 rounded-t-lg">
+                    <i class="text-blue-dark fa fa-tasks"></i>
+                    All uncompleted tasks:
+                </div>
+
+                <div class="divide p-2.5">
+
+                    <div class="text-second"
+                         v-if="tasksNotFound(all_uncompleted_tasks)==1">
+                        0 tasks
+                    </div>
+                    <ul v-for="task in all_uncompleted_tasks">
+                        <li class="font-semibold rounded flex items-center justify-between hover:bg-gray-200">
+
+                            <div class="flex justify-between items-center truncate ">
+                                <p class="font-medium text-blue-dark py-2 truncate  rounded font-normal items-center">
+                                    <i class="text-sm fa fa-bolt"></i>
+                                    {{ task.name }}
+                                </p>
+
+                            </div>
+                            <div class="flex">
+                                <button
+                                    @click="showDetailsWindow(task.id)"
+                                    class="text-blue-dark mr-2 text-xs flex-shrink-0 px-0.5 border border-gray-300 rounded hover:bg-white">
+                                    details
+                                </button>
+                                <button
+                                    @click="showEditWindow(task.id)"
+                                    class="text-blue-dark text-xs mr-2 flex-shrink-0 px-0.5 border border-gray-300 rounded hover:bg-white">
+                                    edit
+                                </button>
+                                <button
+                                    @click="toggleConfirmWindow(task.id,task.name)"
+                                    class=" text-blue-dark text-xs mr-2 flex-shrink-0 px-0.5 border border-gray-300 rounded hover:bg-blue-dark hover:text-white">
+                                    completed
+                                </button>
+                            </div>
+                        </li>
+                    </ul>
+
+                </div>
+
+
+            </div>
+
 
         </div>
 
@@ -152,6 +199,7 @@
 import ModalEditTask from "./componentsDashboardControl/modalEditTask";
 import ShowTask from "./componentsDashboardControl/modalDetailsTask";
 
+
 export default {
     name: "editTasks",
     components: {ShowTask, ModalEditTask},
@@ -159,6 +207,8 @@ export default {
         return {
             tasks_for_today: [],
             update_tasks_in10_days: [],
+            all_uncompleted_tasks:[],
+
             individual_task: [],
 
             showDetailsModal: false,
@@ -178,6 +228,7 @@ export default {
                 .then((response) => {
                     this.tasks_for_today = response.data.tasks_today;
                     this.update_tasks_in10_days = response.data.update_tasks_10days;
+                    this.all_uncompleted_tasks = response.data.all_uncompleted_tasks;
                 });
         },
         tasksNotFound(obj) {
@@ -188,6 +239,7 @@ export default {
         },
         showDetailsWindow(id) {
             let all_tasks = this.tasks_for_today.concat(this.update_tasks_in10_days);
+            all_tasks = all_tasks.concat(this.all_uncompleted_tasks);
             for (let i = 0; i < all_tasks.length; i++) {
                 if (all_tasks[i].id == id) {
                     this.individual_task = all_tasks[i];
@@ -200,6 +252,7 @@ export default {
         showEditWindow(id) {
             this.showDetailsModal = false;
             let all_tasks = this.tasks_for_today.concat(this.update_tasks_in10_days);
+            all_tasks = all_tasks.concat(this.all_uncompleted_tasks);
             for (let i = 0; i < all_tasks.length; i++) {
                 if (all_tasks[i].id == id) {
                     this.individual_task = all_tasks[i];
