@@ -44,51 +44,7 @@ __webpack_require__.r(__webpack_exports__);
       }
 
       return 0;
-    } // getUpdateTasksIn10Days(tasks) {
-    //     const dateFromToday = new Date(new Date().setHours(0, 0, 0, 0));
-    //
-    //     let dateOver10days = this.getDateForNext10Days(dateFromToday);
-    //     dateOver10days.setHours(0, 0, 0, 0)
-    //
-    //     for (let i = 0; i < tasks.length; i++) {
-    //         let taskDate = new Date(tasks[i].task_date);
-    //         taskDate.setHours(0, 0, 0, 0)
-    //
-    //         if (this.isUpdateTask(tasks[i]) &&
-    //             this.isTaskDateBetweenDates(dateFromToday, dateOver10days, taskDate)) {
-    //
-    //             this.update_tasks_in10_days.push(tasks[i]);
-    //         }
-    //
-    //         JSON.stringify(this.update_tasks_in10_days);
-    //     }
-    // },
-    // isUpdateTask(task) {
-    //     if (task.type === 0) {
-    //         return 1;
-    //     }
-    //     return 0;
-    // },
-    // getDateForNext10Days(date) {
-    //     let newDate = new Date().setDate(date.getDate() + 9);
-    //     newDate = new Date(newDate);
-    //     return newDate;
-    // },
-    //
-    // isTaskDateBetweenDates(dateFrom, dateTo, contractEndDay) {
-    //     if (contractEndDay >= dateFrom
-    //         && contractEndDay <= dateTo) {
-    //         return 1;
-    //     }
-    //     return 0;
-    // },
-    // sortTasksAfterDate(tasks) {
-    //     tasks.sort(function (a, b) {
-    //         return new Date(a.task_date) - new Date(b.task_date);
-    //     });
-    //     return tasks;
-    // },
-
+    }
   }
 });
 

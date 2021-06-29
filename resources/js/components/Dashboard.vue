@@ -1,5 +1,4 @@
 <template>
-    <!--    <layout-dashboard>-->
 
     <div class=" bg-gradient-to-tl bg-fixed bg-gray-200">
         <ul class="grid gap-3 grid-cols-4 grid-rows-2 grid-flow-row border-blue-dark border-2 h-screen p-4 ">
@@ -11,7 +10,8 @@
 
             <!--                CLIENTS ENDING CONTRACT IN 30 DAYS DONE -->
             <li class="row-span-2 grid-box">
-                <clients-contract-end-in30-days v-bind:clients="updateData.ContractEndIn30Days"></clients-contract-end-in30-days>
+                <clients-contract-end-in30-days
+                    v-bind:clients="updateData.ContractEndIn30Days"></clients-contract-end-in30-days>
             </li>
 
             <!--                FAILED EVENTS-->
@@ -37,7 +37,6 @@
         </ul>
     </div>
 
-    <!--    </layout-dashboard>-->
 </template>
 
 <script>
@@ -102,6 +101,12 @@ export default {
         }, 5000)
     },
     methods: {
+        isDateChanged(previousData, newData) {
+            if (JSON.stringify(previousData) !== JSON.stringify(newData)) {
+                return 1;
+            }
+            return 0;
+        },
         updateDataIfNeeded(oldData, newData) {
             if (this.isDateChanged(oldData.previousTasksToday, newData.tasks_today)) {
                 console.log('difference tasks today')
@@ -137,12 +142,7 @@ export default {
             }
 
         },
-        isDateChanged(previousData, newData) {
-            if (JSON.stringify(previousData) !== JSON.stringify(newData)) {
-                return 1;
-            }
-            return 0;
-        }
+
     }
 };
 </script>

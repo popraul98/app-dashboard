@@ -207,7 +207,7 @@ export default {
         return {
             tasks_for_today: [],
             update_tasks_in10_days: [],
-            all_uncompleted_tasks:[],
+            all_uncompleted_tasks: [],
 
             individual_task: [],
 

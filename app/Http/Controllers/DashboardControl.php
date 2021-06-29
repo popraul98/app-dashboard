@@ -38,9 +38,6 @@ class DashboardControl extends Controller
             'all_clients' => $all_clients,
             'out_of_date_tasks' => $out_of_date_tasks,
             'all_uncompleted_tasks' => $all_uncompleted_tasks,
-//            'clients_contract_end_today' => $clients_contract_end_today,
-//            'clients_contract_end_in30_days' => $clients_contract_end_in30_days,
-//            'events_failed' => $events_failed,
         ]);
 
     }

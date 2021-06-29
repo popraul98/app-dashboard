@@ -90,7 +90,7 @@ class Task extends Model
     {
         $todayDate = Carbon::today();
 
-        return $query->whereDate('task_date', '<=', $todayDate)
+        return $query->whereDate('task_date', '<', $todayDate)
             ->where('closed_date', NULL)
             ->orderBy('task_date', 'ASC');
     }

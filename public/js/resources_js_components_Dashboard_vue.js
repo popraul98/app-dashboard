@@ -205,6 +205,13 @@ __webpack_require__.r(__webpack_exports__);
     }, 5000);
   },
   methods: {
+    isDateChanged: function isDateChanged(previousData, newData) {
+      if (JSON.stringify(previousData) !== JSON.stringify(newData)) {
+        return 1;
+      }
+
+      return 0;
+    },
     updateDataIfNeeded: function updateDataIfNeeded(oldData, newData) {
       if (this.isDateChanged(oldData.previousTasksToday, newData.tasks_today)) {
         console.log('difference tasks today');
@@ -235,13 +242,6 @@ __webpack_require__.r(__webpack_exports__);
         this.updateData.EventsFailed = newData.events_failed;
         this.previousData.previousEventsFailed = newData.events_failed;
       }
-    },
-    isDateChanged: function isDateChanged(previousData, newData) {
-      if (JSON.stringify(previousData) !== JSON.stringify(newData)) {
-        return 1;
-      }
-
-      return 0;
     }
   }
 });
@@ -350,7 +350,7 @@ __webpack_require__.r(__webpack_exports__);
     console.log('TodayTasks mounted');
   },
   watch: {
-    tasks: function tasks(newTasks) {
+    tasks: function tasks() {
       console.log('NEW update tasks TODAY');
       this.tasks_for_today = this.tasks;
     }
@@ -429,51 +429,7 @@ __webpack_require__.r(__webpack_exports__);
       }
 
       return 0;
-    } // getUpdateTasksIn10Days(tasks) {
-    //     const dateFromToday = new Date(new Date().setHours(0, 0, 0, 0));
-    //
-    //     let dateOver10days = this.getDateForNext10Days(dateFromToday);
-    //     dateOver10days.setHours(0, 0, 0, 0)
-    //
-    //     for (let i = 0; i < tasks.length; i++) {
-    //         let taskDate = new Date(tasks[i].task_date);
-    //         taskDate.setHours(0, 0, 0, 0)
-    //
-    //         if (this.isUpdateTask(tasks[i]) &&
-    //             this.isTaskDateBetweenDates(dateFromToday, dateOver10days, taskDate)) {
-    //
-    //             this.update_tasks_in10_days.push(tasks[i]);
-    //         }
-    //
-    //         JSON.stringify(this.update_tasks_in10_days);
-    //     }
-    // },
-    // isUpdateTask(task) {
-    //     if (task.type === 0) {
-    //         return 1;
-    //     }
-    //     return 0;
-    // },
-    // getDateForNext10Days(date) {
-    //     let newDate = new Date().setDate(date.getDate() + 9);
-    //     newDate = new Date(newDate);
-    //     return newDate;
-    // },
-    //
-    // isTaskDateBetweenDates(dateFrom, dateTo, contractEndDay) {
-    //     if (contractEndDay >= dateFrom
-    //         && contractEndDay <= dateTo) {
-    //         return 1;
-    //     }
-    //     return 0;
-    // },
-    // sortTasksAfterDate(tasks) {
-    //     tasks.sort(function (a, b) {
-    //         return new Date(a.task_date) - new Date(b.task_date);
-    //     });
-    //     return tasks;
-    // },
-
+    }
   }
 });
 
@@ -497,60 +453,6 @@ __webpack_require__.r(__webpack_exports__);
     console.log('mounted layout dashboard');
   }
 });
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/TodayTasks.vue?vue&type=style&index=0&id=960c6a10&scoped=true&lang=css":
-/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/TodayTasks.vue?vue&type=style&index=0&id=960c6a10&scoped=true&lang=css ***!
-  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
-/* harmony export */ });
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
-// Imports
-
-var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
-// Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n\n", ""]);
-// Exports
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
-
-
-/***/ }),
-
-/***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/TodayTasks.vue?vue&type=style&index=0&id=960c6a10&scoped=true&lang=css":
-/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/TodayTasks.vue?vue&type=style&index=0&id=960c6a10&scoped=true&lang=css ***!
-  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
-/* harmony export */ });
-/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
-/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_TodayTasks_vue_vue_type_style_index_0_id_960c6a10_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!../../../node_modules/vue-loader/dist/stylePostLoader.js!../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./TodayTasks.vue?vue&type=style&index=0&id=960c6a10&scoped=true&lang=css */ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/TodayTasks.vue?vue&type=style&index=0&id=960c6a10&scoped=true&lang=css");
-
-            
-
-var options = {};
-
-options.insert = "head";
-options.singleton = false;
-
-var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_TodayTasks_vue_vue_type_style_index_0_id_960c6a10_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_1__.default, options);
-
-
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_TodayTasks_vue_vue_type_style_index_0_id_960c6a10_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_1__.default.locals || {});
 
 /***/ }),
 
@@ -617,12 +519,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
 /* harmony export */ });
-/* harmony import */ var _Dashboard_vue_vue_type_template_id_040e2ab9_bindings_tasks_today_props_update_tasks_10days_props_clients_contract_end_today_props_clients_contract_end_in30_days_props_events_failed_props_updateData_data_previousData_data_updateDataIfNeeded_options_isDateChanged_options___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Dashboard.vue?vue&type=template&id=040e2ab9&bindings={"tasks_today":"props","update_tasks_10days":"props","clients_contract_end_today":"props","clients_contract_end_in30_days":"props","events_failed":"props","updateData":"data","previousData":"data","updateDataIfNeeded":"options","isDateChanged":"options"} */ "./resources/js/components/Dashboard.vue?vue&type=template&id=040e2ab9&bindings={\"tasks_today\":\"props\",\"update_tasks_10days\":\"props\",\"clients_contract_end_today\":\"props\",\"clients_contract_end_in30_days\":\"props\",\"events_failed\":\"props\",\"updateData\":\"data\",\"previousData\":\"data\",\"updateDataIfNeeded\":\"options\",\"isDateChanged\":\"options\"}");
+/* harmony import */ var _Dashboard_vue_vue_type_template_id_040e2ab9_bindings_tasks_today_props_update_tasks_10days_props_clients_contract_end_today_props_clients_contract_end_in30_days_props_events_failed_props_updateData_data_previousData_data_isDateChanged_options_updateDataIfNeeded_options___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Dashboard.vue?vue&type=template&id=040e2ab9&bindings={"tasks_today":"props","update_tasks_10days":"props","clients_contract_end_today":"props","clients_contract_end_in30_days":"props","events_failed":"props","updateData":"data","previousData":"data","isDateChanged":"options","updateDataIfNeeded":"options"} */ "./resources/js/components/Dashboard.vue?vue&type=template&id=040e2ab9&bindings={\"tasks_today\":\"props\",\"update_tasks_10days\":\"props\",\"clients_contract_end_today\":\"props\",\"clients_contract_end_in30_days\":\"props\",\"events_failed\":\"props\",\"updateData\":\"data\",\"previousData\":\"data\",\"isDateChanged\":\"options\",\"updateDataIfNeeded\":\"options\"}");
 /* harmony import */ var _Dashboard_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Dashboard.vue?vue&type=script&lang=js */ "./resources/js/components/Dashboard.vue?vue&type=script&lang=js");
 
 
 
-_Dashboard_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__.default.render = _Dashboard_vue_vue_type_template_id_040e2ab9_bindings_tasks_today_props_update_tasks_10days_props_clients_contract_end_today_props_clients_contract_end_in30_days_props_events_failed_props_updateData_data_previousData_data_updateDataIfNeeded_options_isDateChanged_options___WEBPACK_IMPORTED_MODULE_0__.render
+_Dashboard_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__.default.render = _Dashboard_vue_vue_type_template_id_040e2ab9_bindings_tasks_today_props_update_tasks_10days_props_clients_contract_end_today_props_clients_contract_end_in30_days_props_events_failed_props_updateData_data_previousData_data_isDateChanged_options_updateDataIfNeeded_options___WEBPACK_IMPORTED_MODULE_0__.render
 /* hot reload */
 if (false) {}
 
@@ -695,16 +597,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
 /* harmony export */ });
-/* harmony import */ var _TodayTasks_vue_vue_type_template_id_960c6a10_scoped_true_bindings_tasks_props_tasks_for_today_data_tasksNotFound_options___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TodayTasks.vue?vue&type=template&id=960c6a10&scoped=true&bindings={"tasks":"props","tasks_for_today":"data","tasksNotFound":"options"} */ "./resources/js/components/TodayTasks.vue?vue&type=template&id=960c6a10&scoped=true&bindings={\"tasks\":\"props\",\"tasks_for_today\":\"data\",\"tasksNotFound\":\"options\"}");
+/* harmony import */ var _TodayTasks_vue_vue_type_template_id_960c6a10_bindings_tasks_props_tasks_for_today_data_tasksNotFound_options___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TodayTasks.vue?vue&type=template&id=960c6a10&bindings={"tasks":"props","tasks_for_today":"data","tasksNotFound":"options"} */ "./resources/js/components/TodayTasks.vue?vue&type=template&id=960c6a10&bindings={\"tasks\":\"props\",\"tasks_for_today\":\"data\",\"tasksNotFound\":\"options\"}");
 /* harmony import */ var _TodayTasks_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TodayTasks.vue?vue&type=script&lang=js */ "./resources/js/components/TodayTasks.vue?vue&type=script&lang=js");
-/* harmony import */ var _TodayTasks_vue_vue_type_style_index_0_id_960c6a10_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./TodayTasks.vue?vue&type=style&index=0&id=960c6a10&scoped=true&lang=css */ "./resources/js/components/TodayTasks.vue?vue&type=style&index=0&id=960c6a10&scoped=true&lang=css");
 
 
 
-
-;
-_TodayTasks_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__.default.render = _TodayTasks_vue_vue_type_template_id_960c6a10_scoped_true_bindings_tasks_props_tasks_for_today_data_tasksNotFound_options___WEBPACK_IMPORTED_MODULE_0__.render
-_TodayTasks_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__.default.__scopeId = "data-v-960c6a10"
+_TodayTasks_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__.default.render = _TodayTasks_vue_vue_type_template_id_960c6a10_bindings_tasks_props_tasks_for_today_data_tasksNotFound_options___WEBPACK_IMPORTED_MODULE_0__.render
 /* hot reload */
 if (false) {}
 
@@ -894,19 +792,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/components/TodayTasks.vue?vue&type=style&index=0&id=960c6a10&scoped=true&lang=css":
-/*!********************************************************************************************************!*\
-  !*** ./resources/js/components/TodayTasks.vue?vue&type=style&index=0&id=960c6a10&scoped=true&lang=css ***!
-  \********************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_TodayTasks_vue_vue_type_style_index_0_id_960c6a10_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/style-loader/dist/cjs.js!../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!../../../node_modules/vue-loader/dist/stylePostLoader.js!../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./TodayTasks.vue?vue&type=style&index=0&id=960c6a10&scoped=true&lang=css */ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/TodayTasks.vue?vue&type=style&index=0&id=960c6a10&scoped=true&lang=css");
-
-
-/***/ }),
-
 /***/ "./resources/js/components/ClientsContractEndIn30Days.vue?vue&type=template&id=39a3ec76&bindings={\"clients\":\"props\",\"clients_contract_end_in30days\":\"data\",\"clientsNotFound\":\"options\"}":
 /*!**********************************************************************************************************************************************************************************************!*\
   !*** ./resources/js/components/ClientsContractEndIn30Days.vue?vue&type=template&id=39a3ec76&bindings={"clients":"props","clients_contract_end_in30days":"data","clientsNotFound":"options"} ***!
@@ -939,18 +824,18 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/components/Dashboard.vue?vue&type=template&id=040e2ab9&bindings={\"tasks_today\":\"props\",\"update_tasks_10days\":\"props\",\"clients_contract_end_today\":\"props\",\"clients_contract_end_in30_days\":\"props\",\"events_failed\":\"props\",\"updateData\":\"data\",\"previousData\":\"data\",\"updateDataIfNeeded\":\"options\",\"isDateChanged\":\"options\"}":
+/***/ "./resources/js/components/Dashboard.vue?vue&type=template&id=040e2ab9&bindings={\"tasks_today\":\"props\",\"update_tasks_10days\":\"props\",\"clients_contract_end_today\":\"props\",\"clients_contract_end_in30_days\":\"props\",\"events_failed\":\"props\",\"updateData\":\"data\",\"previousData\":\"data\",\"isDateChanged\":\"options\",\"updateDataIfNeeded\":\"options\"}":
 /*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./resources/js/components/Dashboard.vue?vue&type=template&id=040e2ab9&bindings={"tasks_today":"props","update_tasks_10days":"props","clients_contract_end_today":"props","clients_contract_end_in30_days":"props","events_failed":"props","updateData":"data","previousData":"data","updateDataIfNeeded":"options","isDateChanged":"options"} ***!
+  !*** ./resources/js/components/Dashboard.vue?vue&type=template&id=040e2ab9&bindings={"tasks_today":"props","update_tasks_10days":"props","clients_contract_end_today":"props","clients_contract_end_in30_days":"props","events_failed":"props","updateData":"data","previousData":"data","isDateChanged":"options","updateDataIfNeeded":"options"} ***!
   \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => /* reexport safe */ _node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Dashboard_vue_vue_type_template_id_040e2ab9_bindings_tasks_today_props_update_tasks_10days_props_clients_contract_end_today_props_clients_contract_end_in30_days_props_events_failed_props_updateData_data_previousData_data_updateDataIfNeeded_options_isDateChanged_options___WEBPACK_IMPORTED_MODULE_0__.render
+/* harmony export */   "render": () => /* reexport safe */ _node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Dashboard_vue_vue_type_template_id_040e2ab9_bindings_tasks_today_props_update_tasks_10days_props_clients_contract_end_today_props_clients_contract_end_in30_days_props_events_failed_props_updateData_data_previousData_data_isDateChanged_options_updateDataIfNeeded_options___WEBPACK_IMPORTED_MODULE_0__.render
 /* harmony export */ });
-/* harmony import */ var _node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Dashboard_vue_vue_type_template_id_040e2ab9_bindings_tasks_today_props_update_tasks_10days_props_clients_contract_end_today_props_clients_contract_end_in30_days_props_events_failed_props_updateData_data_previousData_data_updateDataIfNeeded_options_isDateChanged_options___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Dashboard.vue?vue&type=template&id=040e2ab9&bindings={"tasks_today":"props","update_tasks_10days":"props","clients_contract_end_today":"props","clients_contract_end_in30_days":"props","events_failed":"props","updateData":"data","previousData":"data","updateDataIfNeeded":"options","isDateChanged":"options"} */ "./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Dashboard.vue?vue&type=template&id=040e2ab9&bindings={\"tasks_today\":\"props\",\"update_tasks_10days\":\"props\",\"clients_contract_end_today\":\"props\",\"clients_contract_end_in30_days\":\"props\",\"events_failed\":\"props\",\"updateData\":\"data\",\"previousData\":\"data\",\"updateDataIfNeeded\":\"options\",\"isDateChanged\":\"options\"}");
+/* harmony import */ var _node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Dashboard_vue_vue_type_template_id_040e2ab9_bindings_tasks_today_props_update_tasks_10days_props_clients_contract_end_today_props_clients_contract_end_in30_days_props_events_failed_props_updateData_data_previousData_data_isDateChanged_options_updateDataIfNeeded_options___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Dashboard.vue?vue&type=template&id=040e2ab9&bindings={"tasks_today":"props","update_tasks_10days":"props","clients_contract_end_today":"props","clients_contract_end_in30_days":"props","events_failed":"props","updateData":"data","previousData":"data","isDateChanged":"options","updateDataIfNeeded":"options"} */ "./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Dashboard.vue?vue&type=template&id=040e2ab9&bindings={\"tasks_today\":\"props\",\"update_tasks_10days\":\"props\",\"clients_contract_end_today\":\"props\",\"clients_contract_end_in30_days\":\"props\",\"events_failed\":\"props\",\"updateData\":\"data\",\"previousData\":\"data\",\"isDateChanged\":\"options\",\"updateDataIfNeeded\":\"options\"}");
 
 
 /***/ }),
@@ -987,18 +872,18 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/components/TodayTasks.vue?vue&type=template&id=960c6a10&scoped=true&bindings={\"tasks\":\"props\",\"tasks_for_today\":\"data\",\"tasksNotFound\":\"options\"}":
-/*!************************************************************************************************************************************************************************!*\
-  !*** ./resources/js/components/TodayTasks.vue?vue&type=template&id=960c6a10&scoped=true&bindings={"tasks":"props","tasks_for_today":"data","tasksNotFound":"options"} ***!
-  \************************************************************************************************************************************************************************/
+/***/ "./resources/js/components/TodayTasks.vue?vue&type=template&id=960c6a10&bindings={\"tasks\":\"props\",\"tasks_for_today\":\"data\",\"tasksNotFound\":\"options\"}":
+/*!************************************************************************************************************************************************************!*\
+  !*** ./resources/js/components/TodayTasks.vue?vue&type=template&id=960c6a10&bindings={"tasks":"props","tasks_for_today":"data","tasksNotFound":"options"} ***!
+  \************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => /* reexport safe */ _node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_TodayTasks_vue_vue_type_template_id_960c6a10_scoped_true_bindings_tasks_props_tasks_for_today_data_tasksNotFound_options___WEBPACK_IMPORTED_MODULE_0__.render
+/* harmony export */   "render": () => /* reexport safe */ _node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_TodayTasks_vue_vue_type_template_id_960c6a10_bindings_tasks_props_tasks_for_today_data_tasksNotFound_options___WEBPACK_IMPORTED_MODULE_0__.render
 /* harmony export */ });
-/* harmony import */ var _node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_TodayTasks_vue_vue_type_template_id_960c6a10_scoped_true_bindings_tasks_props_tasks_for_today_data_tasksNotFound_options___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./TodayTasks.vue?vue&type=template&id=960c6a10&scoped=true&bindings={"tasks":"props","tasks_for_today":"data","tasksNotFound":"options"} */ "./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/TodayTasks.vue?vue&type=template&id=960c6a10&scoped=true&bindings={\"tasks\":\"props\",\"tasks_for_today\":\"data\",\"tasksNotFound\":\"options\"}");
+/* harmony import */ var _node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_TodayTasks_vue_vue_type_template_id_960c6a10_bindings_tasks_props_tasks_for_today_data_tasksNotFound_options___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./TodayTasks.vue?vue&type=template&id=960c6a10&bindings={"tasks":"props","tasks_for_today":"data","tasksNotFound":"options"} */ "./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/TodayTasks.vue?vue&type=template&id=960c6a10&bindings={\"tasks\":\"props\",\"tasks_for_today\":\"data\",\"tasksNotFound\":\"options\"}");
 
 
 /***/ }),
@@ -1135,9 +1020,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Dashboard.vue?vue&type=template&id=040e2ab9&bindings={\"tasks_today\":\"props\",\"update_tasks_10days\":\"props\",\"clients_contract_end_today\":\"props\",\"clients_contract_end_in30_days\":\"props\",\"events_failed\":\"props\",\"updateData\":\"data\",\"previousData\":\"data\",\"updateDataIfNeeded\":\"options\",\"isDateChanged\":\"options\"}":
+/***/ "./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Dashboard.vue?vue&type=template&id=040e2ab9&bindings={\"tasks_today\":\"props\",\"update_tasks_10days\":\"props\",\"clients_contract_end_today\":\"props\",\"clients_contract_end_in30_days\":\"props\",\"events_failed\":\"props\",\"updateData\":\"data\",\"previousData\":\"data\",\"isDateChanged\":\"options\",\"updateDataIfNeeded\":\"options\"}":
 /*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Dashboard.vue?vue&type=template&id=040e2ab9&bindings={"tasks_today":"props","update_tasks_10days":"props","clients_contract_end_today":"props","clients_contract_end_in30_days":"props","events_failed":"props","updateData":"data","previousData":"data","updateDataIfNeeded":"options","isDateChanged":"options"} ***!
+  !*** ./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/Dashboard.vue?vue&type=template&id=040e2ab9&bindings={"tasks_today":"props","update_tasks_10days":"props","clients_contract_end_today":"props","clients_contract_end_in30_days":"props","events_failed":"props","updateData":"data","previousData":"data","isDateChanged":"options","updateDataIfNeeded":"options"} ***!
   \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -1166,48 +1051,44 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_clients_today_contract_end = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("clients-today-contract-end")
   const _component_update_tasks_in10_days = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("update-tasks-in10-days")
 
-  return ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [
-    (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("    <layout-dashboard>"),
-    (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_1, [
-      (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("ul", _hoisted_2, [
-        (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("            LOGO AND TIME"),
-        (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("li", _hoisted_3, [
-          (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_logo_time)
-        ]),
-        (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                CLIENTS ENDING CONTRACT IN 30 DAYS DONE "),
-        (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("li", _hoisted_4, [
-          (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_clients_contract_end_in30_days, {
-            clients: $data.updateData.ContractEndIn30Days
-          }, null, 8 /* PROPS */, ["clients"])
-        ]),
-        (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                FAILED EVENTS"),
-        (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("li", _hoisted_5, [
-          (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_failed_events, {
-            events: $data.updateData.EventsFailed
-          }, null, 8 /* PROPS */, ["events"])
-        ]),
-        (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("               TASKS FOR TODAY DONE"),
-        (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("li", _hoisted_6, [
-          (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_today_tasks, {
-            tasks: $data.updateData.TasksToday
-          }, null, 8 /* PROPS */, ["tasks"])
-        ]),
-        (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                CLIENTS ENDING CONTRACT TODAY DONE "),
-        (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("li", _hoisted_7, [
-          (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_clients_today_contract_end, {
-            clients: $data.updateData.ContractEndToday
-          }, null, 8 /* PROPS */, ["clients"])
-        ]),
-        (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                UPDATE TASKS IN 10 DAYS  DONE "),
-        (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("li", _hoisted_8, [
-          (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_update_tasks_in10_days, {
-            tasks: $data.updateData.TasksUpdate10Days
-          }, null, 8 /* PROPS */, ["tasks"])
-        ])
+  return ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_1, [
+    (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("ul", _hoisted_2, [
+      (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("            LOGO AND TIME"),
+      (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("li", _hoisted_3, [
+        (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_logo_time)
+      ]),
+      (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                CLIENTS ENDING CONTRACT IN 30 DAYS DONE "),
+      (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("li", _hoisted_4, [
+        (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_clients_contract_end_in30_days, {
+          clients: $data.updateData.ContractEndIn30Days
+        }, null, 8 /* PROPS */, ["clients"])
+      ]),
+      (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                FAILED EVENTS"),
+      (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("li", _hoisted_5, [
+        (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_failed_events, {
+          events: $data.updateData.EventsFailed
+        }, null, 8 /* PROPS */, ["events"])
+      ]),
+      (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("               TASKS FOR TODAY DONE"),
+      (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("li", _hoisted_6, [
+        (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_today_tasks, {
+          tasks: $data.updateData.TasksToday
+        }, null, 8 /* PROPS */, ["tasks"])
+      ]),
+      (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                CLIENTS ENDING CONTRACT TODAY DONE "),
+      (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("li", _hoisted_7, [
+        (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_clients_today_contract_end, {
+          clients: $data.updateData.ContractEndToday
+        }, null, 8 /* PROPS */, ["clients"])
+      ]),
+      (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("                UPDATE TASKS IN 10 DAYS  DONE "),
+      (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("li", _hoisted_8, [
+        (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_update_tasks_in10_days, {
+          tasks: $data.updateData.TasksUpdate10Days
+        }, null, 8 /* PROPS */, ["tasks"])
       ])
-    ]),
-    (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("    </layout-dashboard>")
-  ], 2112 /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */))
+    ])
+  ]))
 }
 
 /***/ }),
@@ -1317,10 +1198,10 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/TodayTasks.vue?vue&type=template&id=960c6a10&scoped=true&bindings={\"tasks\":\"props\",\"tasks_for_today\":\"data\",\"tasksNotFound\":\"options\"}":
-/*!*********************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/TodayTasks.vue?vue&type=template&id=960c6a10&scoped=true&bindings={"tasks":"props","tasks_for_today":"data","tasksNotFound":"options"} ***!
-  \*********************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/TodayTasks.vue?vue&type=template&id=960c6a10&bindings={\"tasks\":\"props\",\"tasks_for_today\":\"data\",\"tasksNotFound\":\"options\"}":
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/TodayTasks.vue?vue&type=template&id=960c6a10&bindings={"tasks":"props","tasks_for_today":"data","tasksNotFound":"options"} ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -1330,9 +1211,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
-const _withId = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.withScopeId)("data-v-960c6a10")
 
-;(0,vue__WEBPACK_IMPORTED_MODULE_0__.pushScopeId)("data-v-960c6a10")
 const _hoisted_1 = { class: "text-left" }
 const _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h2", { class: "title-box pb-1" }, [
   /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("i", { class: "fa fa-tasks" }),
@@ -1345,9 +1224,8 @@ const _hoisted_4 = {
 }
 const _hoisted_5 = { class: "text-main truncate" }
 const _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("i", { class: "arrow-color  fas fa-angle-right" }, null, -1 /* HOISTED */)
-;(0,vue__WEBPACK_IMPORTED_MODULE_0__.popScopeId)()
 
-const render = /*#__PURE__*/_withId((_ctx, _cache, $props, $setup, $data, $options) => {
+function render(_ctx, _cache, $props, $setup, $data, $options) {
   return ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_1, [
     _hoisted_2,
     (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_3, [
@@ -1362,7 +1240,7 @@ const render = /*#__PURE__*/_withId((_ctx, _cache, $props, $setup, $data, $optio
       }), 256 /* UNKEYED_FRAGMENT */))
     ])
   ]))
-})
+}
 
 /***/ }),
 
